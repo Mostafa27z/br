@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام بر - الإحصائيات الاجتماعية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e5eeff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#505456",
+                        "secondary": "#545f73",
+                        "outline-variant": "#bec9c2",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-container": "#065f46",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary-fixed": "#002116",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-background": "#0b1c30",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary": "#393d3f",
+                        "inverse-surface": "#213145",
+                        "primary": "#004532",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#00513b",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#111c2d",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-primary-container": "#8bd6b7",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#586377",
+                        "surface-tint": "#1b6b51",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#c5c8ca",
+                        "primary-fixed": "#a6f2d1",
+                        "secondary-fixed": "#d8e3fb",
+                        "inverse-primary": "#8bd6b6",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#6f7973",
+                        "on-surface-variant": "#3f4944"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "margin-desktop": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"]
+                    }
+                }
+            }
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed top-0 right-0 h-full w-64 bg-secondary shadow-lg flex flex-col p-md gap-sm z-50 md:flex hidden">
+<div class="flex items-center gap-md mb-xl px-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A modern, abstract logo for a social services platform. Geometric shapes combining green and blue tones representing community and growth. Clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvXN7wKxfDbG5AaJdmJltTc_25d7FuEn7DuSE6lzAbviJ03rVjXiQJu5mZDxpNxAPnRNNr_0UgXEHrd0OQGWT9bc4yoyzmkcmiUJf7FgyJJL2jQmTON12ixR9-9ZtAJyNMKJTQVjaIzmCr6akjX5_-3joUEIKMkjU74F8vYBHcwHoONXZ1mcVf09TnMzMfq_nXXIN1UvV57vuE4gbFzHPgOv019XhwZi9n7HPo4LLnVcs0DFMnPqiVYA"/>
+</div>
+<div>
+<h1 class="text-headline-sm font-headline-sm text-surface-container-lowest">نظام بر</h1>
+<p class="text-label-sm font-label-sm text-secondary-fixed-dim">إدارة الحالات الاجتماعية</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">لوحة التحكم</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="diversity_1">diversity_1</span>
+<span class="font-label-lg text-label-lg">الحالات الاجتماعية</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-lg text-label-lg">الطلبات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-lg text-label-lg">المستفيدين</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md bg-primary text-on-primary rounded-lg p-md border-r-4 border-primary-fixed translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-lg text-label-lg">التقارير</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-lg text-label-lg">الإعدادات</span>
+</a>
+</nav>
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-sm px-md rounded-lg flex items-center justify-center gap-sm mt-auto hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+            إضافة حالة جديدة
+        </button>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg mt-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-lg text-label-lg">تسجيل الخروج</span>
+</a>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:mr-64 p-margin-desktop w-full max-w-[1440px] mx-auto overflow-y-auto">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h2 class="text-display-md font-display-md text-on-surface mb-xs">الإحصائيات الاجتماعية</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">نظرة شاملة على التوزيع الديموغرافي والاجتماعي للحالات المسجلة.</p>
+</div>
+<div class="flex items-center gap-md">
+<button class="flex items-center gap-sm px-md py-sm rounded-lg border border-outline text-on-surface font-label-lg text-label-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">download</span>
+                    تصدير التقرير
+                </button>
+<button class="flex items-center gap-sm px-md py-sm rounded-lg bg-primary text-on-primary font-label-lg text-label-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">filter_list</span>
+                    تصفية البيانات
+                </button>
+</div>
+</header>
+<!-- KPI Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-xl">
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col justify-between h-32 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start z-10">
+<h3 class="text-label-lg font-label-lg text-on-surface-variant">إجمالي الحالات</h3>
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">groups</span>
+</div>
+</div>
+<div class="z-10">
+<span class="text-headline-lg font-headline-lg text-on-surface">1,248</span>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[12px]">trending_up</span> +12% هذا الشهر
+                    </span>
+</div>
+<div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-container/5 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col justify-between h-32 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start z-10">
+<h3 class="text-label-lg font-label-lg text-on-surface-variant">الأسر المعالة</h3>
+<div class="w-8 h-8 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm">family_restroom</span>
+</div>
+</div>
+<div class="z-10">
+<span class="text-headline-lg font-headline-lg text-on-surface">856</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-1 block">متوسط 4.2 فرد/أسرة</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col justify-between h-32 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start z-10">
+<h3 class="text-label-lg font-label-lg text-on-surface-variant">الحالات المرضية</h3>
+<div class="w-8 h-8 rounded-full bg-error-container/50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-sm">medical_services</span>
+</div>
+</div>
+<div class="z-10">
+<span class="text-headline-lg font-headline-lg text-on-surface">342</span>
+<span class="text-label-sm font-label-sm text-error flex items-center gap-xs mt-1">
+<span class="material-symbols-outlined text-[12px]">warning</span> تتطلب متابعة
+                    </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col justify-between h-32 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start z-10">
+<h3 class="text-label-lg font-label-lg text-on-surface-variant">المستفيدين الجدد</h3>
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-sm">person_add</span>
+</div>
+</div>
+<div class="z-10">
+<span class="text-headline-lg font-headline-lg text-on-surface">156</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant mt-1 block">خلال الربع الحالي</span>
+</div>
+</div>
+</div>
+<!-- Charts Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-xl">
+<!-- Distribution by Region (Bar Chart) - Spans 2 columns -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col h-[400px]">
+<div class="flex justify-between items-center mb-md">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">التوزيع الجغرافي</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">توزيع الحالات حسب المحافظات</p>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex-1 relative w-full h-full">
+<canvas id="regionChart"></canvas>
+</div>
+</div>
+<!-- Social Status (Donut Chart) -->
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col h-[400px]">
+<div class="mb-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">الحالة الاجتماعية</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">تصنيف المستفيدين الرئيسيين</p>
+</div>
+<div class="flex-1 relative w-full h-full flex items-center justify-center">
+<canvas id="socialStatusChart"></canvas>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="text-center mt-4">
+<span class="block text-headline-md font-headline-md text-on-surface">1.2K</span>
+<span class="block text-label-sm font-label-sm text-on-surface-variant">إجمالي</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Health Conditions (Polar Area Chart) -->
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col h-[350px]">
+<div class="mb-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">الحالات المرضية المزمنة</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">نسبة انتشار الأمراض بين المستفيدين</p>
+</div>
+<div class="flex-1 relative w-full h-full">
+<canvas id="healthChart"></canvas>
+</div>
+</div>
+<!-- Housing Type (Horizontal Bar) -->
+<div class="bg-surface-container-lowest rounded-lg p-lg shadow-sm border border-surface-container flex flex-col h-[350px]">
+<div class="mb-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">أنواع السكن</h3>
+<p class="text-label-sm font-label-sm text-on-surface-variant">تقييم الوضع السكني للأسر</p>
+</div>
+<div class="flex-1 relative w-full h-full">
+<canvas id="housingChart"></canvas>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Set Chart.js defaults for styling and RTL
+        Chart.defaults.font.family = "'IBM Plex Sans Arabic', sans-serif";
+        Chart.defaults.color = '#3f4944'; // on-surface-variant
+        Chart.defaults.plugins.tooltip.rtl = true;
+        Chart.defaults.plugins.legend.rtl = true;
+
+        // Common Chart Colors from Theme
+        const colors = {
+            primary: '#004532',
+            primaryContainer: '#065f46',
+            secondary: '#545f73',
+            secondaryContainer: '#d5e0f8',
+            tertiary: '#393d3f',
+            tertiaryContainer: '#c5c8ca',
+            surfaceContainerHigh: '#dce9ff',
+            grid: '#e5eeff'
+        };
+
+        // 1. Region Bar Chart
+        const regionCtx = document.getElementById('regionChart').getContext('2d');
+        new Chart(regionCtx, {
+            type: 'bar',
+            data: {
+                labels: ['العاصمة', 'حولي', 'الفروانية', 'الجهراء', 'الأحمدي', 'مبارك الكبير'],
+                datasets: [{
+                    label: 'عدد الحالات',
+                    data: [350, 280, 210, 180, 150, 78],
+                    backgroundColor: colors.primary,
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { grid: { color: colors.grid, drawBorder: false }, beginAtZero: true }
+                }
+            }
+        });
+
+        // 2. Social Status Donut Chart
+        const socialCtx = document.getElementById('socialStatusChart').getContext('2d');
+        new Chart(socialCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['أرملة', 'مطلقة', 'متزوج', 'أعزب', 'أخرى'],
+                datasets: [{
+                    data: [45, 30, 15, 7, 3],
+                    backgroundColor: [
+                        colors.primary, 
+                        colors.primaryContainer, 
+                        colors.secondary, 
+                        colors.secondaryContainer,
+                        colors.tertiaryContainer
+                    ],
+                    borderWidth: 0,
+                    cutout: '75%'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { padding: 20, usePointStyle: true, pointStyle: 'circle' } }
+                }
+            }
+        });
+
+        // 3. Health Conditions Polar Chart
+        const healthCtx = document.getElementById('healthChart').getContext('2d');
+        new Chart(healthCtx, {
+            type: 'polarArea',
+            data: {
+                labels: ['سكري', 'ضغط', 'قلب', 'تنفسي', 'حركي'],
+                datasets: [{
+                    data: [120, 90, 60, 45, 27],
+                    backgroundColor: [
+                        'rgba(0, 69, 50, 0.8)',   // primary
+                        'rgba(6, 95, 70, 0.7)',   // primaryContainer
+                        'rgba(84, 95, 115, 0.7)', // secondary
+                        'rgba(57, 61, 63, 0.6)',  // tertiary
+                        'rgba(197, 200, 202, 0.8)'// tertiaryContainer
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { r: { ticks: { display: false }, grid: { color: colors.grid } } },
+                plugins: { legend: { position: 'right' } }
+            }
+        });
+
+        // 4. Housing Type Horizontal Bar Chart
+        const housingCtx = document.getElementById('housingChart').getContext('2d');
+        new Chart(housingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['إيجار شقة', 'بيت حكومي', 'سكن ورثة', 'ملحق إيجار', 'أخرى'],
+                datasets: [{
+                    label: 'العدد',
+                    data: [450, 320, 180, 150, 148],
+                    backgroundColor: colors.secondary,
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { color: colors.grid, drawBorder: false }, beginAtZero: true },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+    </script>
+</body></html>

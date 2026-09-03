@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل المهمة - نظام بر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#a6f2d1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#6f7973",
+                        "on-tertiary-container": "#c5c8ca",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-container": "#065f46",
+                        "outline-variant": "#bec9c2",
+                        "tertiary": "#393d3f",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary": "#004532",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002116",
+                        "secondary": "#545f73",
+                        "background": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#505456",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-primary": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "surface-container": "#e5eeff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#1b6b51",
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#00513b",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary-container": "#8bd6b7",
+                        "secondary-fixed": "#d8e3fb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-surface-variant": "#3f4944",
+                        "on-secondary-container": "#586377",
+                        "surface-variant": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "margin-desktop": "48px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased flex">
+<!-- SideNavBar -->
+<nav class="bg-on-background dark:bg-on-secondary-fixed-variant border-l border-outline-variant fixed right-0 top-0 h-screen flex flex-col z-40 docked full-height right-0 w-64 hidden md:flex">
+<div class="p-lg flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">volunteer_activism</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim">لإدارة الحالات الاجتماعية</p>
+</div>
+</div>
+<button class="mx-md mb-lg mt-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-lg py-sm px-md flex items-center justify-center gap-sm hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            إضافة حالة جديدة
+        </button>
+<ul class="flex-1 flex flex-col gap-xs px-sm">
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+<span class="font-label-lg text-label-lg">الحالات</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-lg text-label-lg">المساعدات</span>
+</a>
+</li>
+<li>
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm rounded-l-lg hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined font-bold">assignment</span>
+<span class="font-label-lg text-label-lg">المهام</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-lg text-label-lg">التقارير</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto p-sm border-t border-outline-variant/20">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-lg text-label-lg">تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 mr-0 md:mr-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-bright dark:bg-inverse-surface shadow-sm dark:shadow-none docked full-width top-0 z-50">
+<div class="flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16">
+<!-- Search -->
+<div class="relative w-72">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-2 pr-10 pl-4 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="بحث عن مهمة..." type="text"/>
+</div>
+<!-- Actions & Profile -->
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 duration-150 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant cursor-pointer active:scale-95 duration-150">
+<img alt="صورة المستخدم الشخصية" class="w-full h-full object-cover" data-alt="صورة شخصية احترافية لموظف في جمعية خيرية، يرتدي ملابس رسمية أنيقة، إضاءة استوديو ناعمة، خلفية فاتحة نظيفة تعكس بيئة عمل حديثة ومشرقة." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWdHLO3-0HSZcAgFXN5O4mxTiypCjbotyDPmtnaKercMHAlzckqlhw4M0rqdhmn2BJQ1_ktmww0TXHbNZ7XK-4Q6Gk0TqrlCr65C0NrvQ6l9aM5TkohsAO0bE9dnKkt5hCO8K_5tyCLVJwsNXMQeKhpYCXsn3NAKyBrHveVpPY0_vdH85-aPcrqiBlNmFn56jIeWCjGzbT27IZVElhxuqGi2RHGTU9WxaXFrLLxBmCwpD5MT57dL0YMw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="flex-1 p-margin-desktop md:p-gutter">
+<!-- Breadcrumb & Header -->
+<div class="mb-lg">
+<nav aria-label="Breadcrumb" class="flex text-on-surface-variant font-label-sm text-label-sm mb-sm">
+<ol class="inline-flex items-center gap-sm">
+<li class="inline-flex items-center hover:text-primary transition-colors cursor-pointer">
+                            المهام
+                        </li>
+<li><span class="material-symbols-outlined text-[14px]">chevron_left</span></li>
+<li aria-current="page" class="text-on-surface">تقييم حالة أسرة العتيبي</li>
+</ol>
+</nav>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">تقييم حالة أسرة العتيبي الميداني</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">زيارة ميدانية لتقييم الاحتياجات الفعلية للأسرة والتأكد من استحقاقهم للدعم السكني ضمن مبادرة مساكن.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface font-label-lg text-label-lg rounded-lg py-2 px-4 hover:bg-surface-container-low transition-colors shadow-sm">
+                            تعديل المهمة
+                        </button>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg rounded-lg py-2 px-4 flex items-center gap-sm hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+                            إنجاز المهمة
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Details Col -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Metadata Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant p-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.04)]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Status -->
+<div class="flex items-start gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">الحالة الحالية</span>
+<span class="inline-flex items-center gap-1 bg-surface-tint/10 text-primary font-label-lg text-label-lg px-2 py-1 rounded">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        قيد التنفيذ
+                                    </span>
+</div>
+</div>
+<!-- Deadline -->
+<div class="flex items-start gap-md">
+<div class="w-12 h-12 rounded-full bg-error-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error">event</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">تاريخ الاستحقاق (Deadline)</span>
+<span class="block font-headline-sm text-headline-sm text-error">24 نوفمبر 2024</span>
+<span class="block font-label-sm text-label-sm text-error/70">متبقي 3 أيام</span>
+</div>
+</div>
+<!-- Assignee -->
+<div class="flex items-start gap-md">
+<div class="w-12 h-12 rounded-full border border-outline-variant overflow-hidden shrink-0">
+<img alt="الباحث الاجتماعي" class="w-full h-full object-cover" data-alt="صورة شخصية لباحث اجتماعي بملابس عملية رسمية، يبتسم بلطف، خلفية مكتبية مضيئة بنوافذ واسعة، جودة تصوير فوتوغرافي عالي الدقة." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkRCQq5VMyVlHwBuNtjbz1yhmc07Ar-zdVwQnAL9x2uFOywwseyfBwMQxeAIl1Zg5FApZjLanmF_NCS_wZ0yeMFpBPSMcdXkHXwYlSwB1WG-S5a9YBvfnfqT6JNPx6YVkOElCQbSzYf0_eYcMbeGk2R-WwVk86JpOL-t2jOUFDf3EB0zK1MNyRjNp1LYa_eKKdYk40Mz63zwVsv4_yHpesGba8Sb_y2cToDPgSyzcPzS0KvOVSrPCCcg"/>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">الموظف المسؤول</span>
+<span class="block font-headline-sm text-headline-sm text-on-surface">أحمد عبدالله</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">باحث اجتماعي أول</span>
+</div>
+</div>
+<!-- Related Case -->
+<div class="flex items-start gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container">family_history</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-1">الحالة الاجتماعية المرتبطة</span>
+<a class="block font-headline-sm text-headline-sm text-primary hover:underline" href="#">أسرة العتيبي #CAS-2024-89</a>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">طلب دعم سكني</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Task Description Details -->
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant p-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.04)]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md flex items-center gap-sm border-b border-surface-variant pb-sm">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+                            تفاصيل وتوجيهات المهمة
+                        </h3>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4">
+<p>يرجى إجراء زيارة ميدانية لمقر سكن أسرة العتيبي الكائن في حي النرجس للتحقق من النقاط التالية:</p>
+<ul class="list-disc list-inside space-y-2 mr-4">
+<li>التحقق من حالة المنزل الحالية (مستأجر/ملك) والاطلاع على عقد الإيجار إن وجد.</li>
+<li>تقييم الوضع الصحي لرب الأسرة والاطلاع على التقارير الطبية الحديثة.</li>
+<li>حصر عدد أفراد الأسرة المقيمين فعلياً في المنزل والتأكد من بيانات التابعين.</li>
+<li>تعبئة نموذج التقييم الميداني (رقم 4) ورفعه على النظام فور الانتهاء.</li>
+</ul>
+<div class="bg-surface-container-low p-md rounded-lg mt-md border border-outline-variant/30">
+<span class="font-label-lg text-label-lg text-on-surface block mb-1">ملاحظة من المشرف:</span>
+<p class="text-sm">الرجاء التركيز على تقييم مدى أهلية الأسرة لبرنامج الإسكان التنموي كأولوية قصوى نظراً لظروفهم الحرجة.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Log Sidebar -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant p-lg shadow-[0_4px_6px_-1px_rgba(0,0,0,0.04)] sticky top-24">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">history</span>
+                            سجل النشاط
+                        </h3>
+<div class="relative pl-2 border-r-2 border-surface-variant mr-4 space-y-xl">
+<!-- Activity Item 1 -->
+<div class="relative pr-6">
+<span class="absolute -right-[11px] top-1 w-5 h-5 rounded-full bg-primary flex items-center justify-center border-4 border-surface-container-lowest">
+<span class="w-1 h-1 bg-white rounded-full"></span>
+</span>
+<p class="font-label-lg text-label-lg text-on-surface">تغيير حالة المهمة</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">تم تغيير الحالة من <span class="bg-surface-variant px-1 rounded text-xs">جديدة</span> إلى <span class="bg-surface-tint/10 text-primary px-1 rounded text-xs">قيد التنفيذ</span> بواسطة <strong>أحمد عبدالله</strong>.</p>
+<span class="block font-label-sm text-label-sm text-tertiary-fixed-dim mt-2">اليوم, 10:30 صباحاً</span>
+</div>
+<!-- Activity Item 2 -->
+<div class="relative pr-6">
+<span class="absolute -right-[11px] top-1 w-5 h-5 rounded-full bg-secondary-fixed-dim flex items-center justify-center border-4 border-surface-container-lowest"></span>
+<p class="font-label-lg text-label-lg text-on-surface">إضافة تعليق</p>
+<div class="bg-surface-container-low p-sm rounded border border-outline-variant/30 mt-2">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">"تم التواصل مع رب الأسرة وتحديد موعد الزيارة غداً عصراً."</p>
+</div>
+<span class="block font-label-sm text-label-sm text-tertiary-fixed-dim mt-2">أمس, 02:15 مساءً - بواسطة أحمد عبدالله</span>
+</div>
+<!-- Activity Item 3 -->
+<div class="relative pr-6">
+<span class="absolute -right-[11px] top-1 w-5 h-5 rounded-full bg-secondary-fixed-dim flex items-center justify-center border-4 border-surface-container-lowest"></span>
+<p class="font-label-lg text-label-lg text-on-surface">إنشاء المهمة وتعيينها</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">تم إنشاء المهمة وتعيينها للموظف <strong>أحمد عبدالله</strong> بواسطة <strong>فهد الدوسري (مشرف)</strong>.</p>
+<span class="block font-label-sm text-label-sm text-tertiary-fixed-dim mt-2">18 نوفمبر 2024, 09:00 صباحاً</span>
+</div>
+</div>
+<!-- Add Comment Input -->
+<div class="mt-xl pt-md border-t border-surface-variant">
+<label class="block font-label-lg text-label-lg text-on-surface mb-2">إضافة تعليق أو تحديث</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none mb-sm" placeholder="اكتب تحديثاً عن سير المهمة..." rows="3"></textarea>
+<button class="w-full bg-surface-container-highest text-on-surface font-label-lg text-label-lg rounded-lg py-2 hover:bg-surface-dim transition-colors">
+                                إرسال
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

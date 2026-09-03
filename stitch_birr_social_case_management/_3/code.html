@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام بر - الإشعارات والمهام</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e5eeff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#505456",
+                        "secondary": "#545f73",
+                        "outline-variant": "#bec9c2",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-container": "#065f46",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary-fixed": "#002116",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-background": "#0b1c30",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "on-tertiary-fixed": "#191c1e",
+                        "tertiary": "#393d3f",
+                        "inverse-surface": "#213145",
+                        "primary": "#004532",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#00513b",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#111c2d",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-primary-container": "#8bd6b7",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#586377",
+                        "surface-tint": "#1b6b51",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-container": "#c5c8ca",
+                        "primary-fixed": "#a6f2d1",
+                        "secondary-fixed": "#d8e3fb",
+                        "inverse-primary": "#8bd6b6",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#6f7973",
+                        "on-surface-variant": "#3f4944"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "margin-desktop": "48px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F8FAFC; } /* Override background to match minimal corporate aesthetic base */
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col md:flex-row">
+<!-- Mobile Top Navigation Bar -->
+<header class="md:hidden flex flex-row-reverse justify-between items-center w-full px-lg py-sm max-w-full mx-auto bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="text-headline-md font-headline-md font-bold text-primary">نظام بر</span>
+</div>
+<div class="flex items-center gap-md text-primary">
+<span class="material-symbols-outlined hover:bg-surface-container-low transition-colors p-sm rounded-full cursor-pointer">notifications</span>
+<span class="material-symbols-outlined hover:bg-surface-container-low transition-colors p-sm rounded-full cursor-pointer">settings</span>
+<img alt="صورة الملف الشخصي للمدير" class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular profile picture of an administrative manager in a professional setting, featuring neutral studio lighting, conveying trust and competence in a corporate or non-profit context. Minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4oOImlIrPK2Id3cfGEtwf0-N5tKhOhe4YMoV0zkhbjrkoails4_ZMWalzmMi-SqsRL3N-RU1tYDL-4Jo394OIEIGPk9eGIMVElHw-j1P3uBTRGSReqSyVzDLv0StANlf-gg3eNf36gVWoUBzADQcMSWTBLrHaAgRF3e8sJ0Q09oBtuYDebZ1Dgos2-sCo3SkPCGGomxAKS2gzHLk9_OvcKK1LWtwiuTWvupaLhlkny0c5UKGnDNM-9w"/>
+</div>
+</header>
+<!-- Desktop Sidebar -->
+<aside class="hidden md:flex flex-col h-screen p-md gap-sm bg-secondary fixed top-0 right-0 w-64 shadow-lg z-40">
+<div class="flex flex-col items-center mb-xl mt-md text-center">
+<img alt="شعار نظام بر" class="w-16 h-16 rounded-full object-cover mb-sm" data-alt="A sleek, modern corporate logo icon representing a non-profit organization focused on social impact, featuring subtle abstract shapes implying growth and care, rendered in crisp high-resolution against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj_aPghgU4WSXw_CtrnDGFWlnp8Ob6WW003E6NPWdq1zedYWql19J5GU8mlgVsRoVCEry5gTnYj2SxPPgnnhyR1ImbTVM3OQw7Uo3t2v3e1wtWF5ru9CFGxkjCxoHQYbJwNuFl_4JCRd9yOAAwrmVYHQL-WBHOYxsI86AlA-4mSkLjVAb0STwbwMOHl9rvUcKpobp47DzNGsWv2WeasEwnFfXshsjOOwCEIoxWKANGHNGKPgJuuPQ_KA"/>
+<h1 class="text-headline-sm font-headline-sm text-surface-container-lowest">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-surface-container-lowest opacity-80 mt-xs">إدارة الحالات الاجتماعية</p>
+</div>
+<button class="bg-primary text-on-primary rounded-lg py-sm px-md font-label-lg text-label-lg w-full mb-md hover:opacity-90 transition-opacity flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+            إضافة حالة جديدة
+        </button>
+<nav class="flex-1 flex flex-col gap-xs overflow-y-auto">
+<!-- Active state mapped to 'لوحة التحكم' as fallback for general dashboard tasks, but this is a specific notifications/tasks view so we highlight dashboard as the nearest parent or leave it generic. We highlight 'لوحة التحكم' -->
+<a class="flex flex-row-reverse items-center gap-md bg-primary text-on-primary rounded-lg p-md border-r-4 border-primary-fixed translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">dashboard</span>
+<span class="font-label-lg text-label-lg">لوحة التحكم</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">diversity_1</span>
+<span class="font-label-lg text-label-lg">الحالات الاجتماعية</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">description</span>
+<span class="font-label-lg text-label-lg">الطلبات</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">group</span>
+<span class="font-label-lg text-label-lg">المستفيدين</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">analytics</span>
+<span class="font-label-lg text-label-lg">التقارير</span>
+</a>
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">settings</span>
+<span class="font-label-lg text-label-lg">الإعدادات</span>
+</a>
+</nav>
+<div class="mt-auto">
+<a class="flex flex-row-reverse items-center gap-md text-surface-variant p-md hover:bg-on-secondary-fixed-variant hover:text-surface-container-lowest transition-all rounded-lg border-t border-on-secondary-fixed-variant pt-md" href="#">
+<span class="material-symbols-outlined font-label-lg text-label-lg">logout</span>
+<span class="font-label-lg text-label-lg">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:mr-64 p-4 md:p-margin-desktop bg-[#F8FAFC]">
+<div class="max-w-[1000px] mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h2 class="text-display-md font-display-md text-on-surface mb-xs">المهام والإشعارات</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">متابعة سير العمل وتحديثات الفريق الميداني</p>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-sm bg-surface-container-lowest p-xs rounded-lg border border-outline-variant/30 shadow-[0_2px_4px_rgba(0,0,0,0.04)]">
+<button class="px-md py-sm bg-primary-container text-on-primary-container rounded font-label-lg text-label-lg">الكل</button>
+<button class="px-md py-sm text-on-surface-variant hover:bg-surface-container-low rounded transition-colors font-label-lg text-label-lg">عاجل</button>
+<button class="px-md py-sm text-on-surface-variant hover:bg-surface-container-low rounded transition-colors font-label-lg text-label-lg">متأخر</button>
+</div>
+</div>
+<!-- Dashboard Bento Grid approach for Overview -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-xl">
+<!-- Overdue Alert Card -->
+<div class="bg-error-container p-lg rounded-xl border-r-4 border-error shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-on-error-container text-display-md">warning</span>
+<span class="font-headline-md text-headline-md text-on-error-container">3</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-error-container">مهام متأخرة</h3>
+<p class="font-body-md text-body-md text-on-error-container/80 mt-xs">تحتاج تدخل فوري</p>
+</div>
+</div>
+<!-- Urgent Follow-up Card -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/20 shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-display-md">assignment_late</span>
+<span class="font-headline-md text-headline-md text-primary">8</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">متابعة عاجلة</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">حالات بانتظار الاعتماد</p>
+</div>
+</div>
+<!-- Field Updates Card -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/20 shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col justify-between">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-secondary text-display-md">person_pin_circle</span>
+<span class="font-headline-md text-headline-md text-secondary">12</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">تحديثات ميدانية</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">تقارير باحثين جديدة</p>
+</div>
+</div>
+</div>
+<!-- Detailed List View -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-[0_2px_4px_rgba(0,0,0,0.04)] overflow-hidden">
+<!-- List Header -->
+<div class="bg-surface-container-low px-lg py-md border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">سجل المهام الحالي</h3>
+<button class="text-primary font-label-lg text-label-lg flex items-center gap-xs hover:opacity-80">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+                        ترتيب
+                    </button>
+</div>
+<!-- List Items -->
+<div class="flex flex-col">
+<!-- Item 1: Overdue -->
+<div class="px-lg py-md border-b border-outline-variant/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md hover:bg-surface-bright transition-colors group cursor-pointer">
+<div class="flex items-start gap-md w-full sm:w-auto">
+<div class="w-2 h-2 rounded-full bg-error mt-2 shrink-0"></div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-xs group-hover:text-primary transition-colors">اعتماد ميزانية الإعانة الشتوية لأسرة "الغامدي"</h4>
+<div class="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>متأخر يومين</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">folder_open</span>ملف #1042</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm shrink-0 mt-sm sm:mt-0 mr-6 sm:mr-0">
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded font-label-sm text-label-sm">متأخر</span>
+<button class="border border-outline-variant text-on-surface-variant hover:bg-surface-container-low px-sm py-xs rounded font-label-sm text-label-sm transition-colors">عرض</button>
+</div>
+</div>
+<!-- Item 2: Urgent -->
+<div class="px-lg py-md border-b border-outline-variant/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md hover:bg-surface-bright transition-colors group cursor-pointer">
+<div class="flex items-start gap-md w-full sm:w-auto">
+<div class="w-2 h-2 rounded-full bg-primary mt-2 shrink-0"></div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-xs group-hover:text-primary transition-colors">مراجعة تقرير الباحث الاجتماعي - حالة أرملة</h4>
+<div class="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">schedule</span>اليوم 10:00 ص</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">person</span>الباحث: أحمد حسن</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm shrink-0 mt-sm sm:mt-0 mr-6 sm:mr-0">
+<span class="bg-surface-container-high text-on-surface px-sm py-xs rounded font-label-sm text-label-sm">عاجل</span>
+<button class="border border-outline-variant text-on-surface-variant hover:bg-surface-container-low px-sm py-xs rounded font-label-sm text-label-sm transition-colors">عرض</button>
+</div>
+</div>
+<!-- Item 3: Field Update -->
+<div class="px-lg py-md border-b border-outline-variant/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md hover:bg-surface-bright transition-colors group cursor-pointer opacity-90">
+<div class="flex items-start gap-md w-full sm:w-auto">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface mb-xs group-hover:text-primary transition-colors">تم تسليم السلة الغذائية لأسرة "العتيبي"</h4>
+<div class="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">check_circle</span>مكتمل</span>
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[14px]">location_on</span>حي النسيم</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm shrink-0 mt-sm sm:mt-0 mr-6 sm:mr-0">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded font-label-sm text-label-sm">تحديث ميداني</span>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More (Minimal) -->
+<div class="p-md flex justify-center bg-surface-container-lowest">
+<button class="text-primary font-label-lg text-label-lg hover:underline decoration-primary underline-offset-4">عرض المزيد من المهام</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام بر - قائمة المهام</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#a6f2d1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#6f7973",
+                        "on-tertiary-container": "#c5c8ca",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "primary-container": "#065f46",
+                        "outline-variant": "#bec9c2",
+                        "tertiary": "#393d3f",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#0b1c30",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary": "#004532",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002116",
+                        "secondary": "#545f73",
+                        "background": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#505456",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-primary": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "surface-container": "#e5eeff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#1b6b51",
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#00513b",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e0e3e5",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-primary-container": "#8bd6b7",
+                        "secondary-fixed": "#d8e3fb",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-surface-variant": "#3f4944",
+                        "on-secondary-container": "#586377",
+                        "surface-variant": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "margin-desktop": "48px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md flex antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<aside class="bg-on-background dark:bg-on-secondary-fixed-variant docked full-height right-0 w-64 border-l border-outline-variant flat no shadows fixed right-0 top-0 h-screen flex flex-col z-40 hidden md:flex">
+<div class="p-lg border-b border-outline-variant/20 flex flex-col items-center">
+<div class="w-16 h-16 bg-surface-container-low rounded-full mb-md flex items-center justify-center border-2 border-primary-fixed shadow-sm" data-alt="A minimalist logo representing a non-profit organization, using modern corporate green tones. A stylized leaf or abstract human figure in vibrant emerald green, flat vector style, isolated on a clean white background. High resolution, perfectly centered, corporate identity mark." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUCrAkawk_ROXbm6-qZ05DiwvZCdtTCzIgIH6MhqeLq1gZXOE5mPWb98crNRNiq2XxHLnurLuQ23YbeGdPXfUF6J5mC7DAXpi7D3Y9Rv0QjKG3_O5RzNDQgaurHMCrRlwHmlE-OP_V6Ayz_X4MftnOXCufqrtWWyfHyGdbRbbafpW9Un7yWd7oqt_jWVlBOhLCOKGEdih8vt8U9ntT7Zt0aEh-rcMyH9IWm17FZ3ICaPntVg7J85a1bQ')"></div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-tertiary-fixed opacity-70 mt-xs">لإدارة الحالات الاجتماعية</p>
+</div>
+<div class="p-md mb-sm">
+<button class="w-full bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-lg text-label-lg py-sm px-md rounded-lg flex items-center justify-center gap-sm transition-colors shadow-sm">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add</span>
+                إضافة حالة جديدة
+            </button>
+</div>
+<nav class="flex-1 overflow-y-auto py-sm px-sm flex flex-col gap-xs font-label-lg text-label-lg">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span>الحالات</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span>المساعدات</span>
+</a>
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm rounded-l-lg hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>المهام</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>التقارير</span>
+</a>
+</nav>
+<div class="p-sm border-t border-outline-variant/20 font-label-lg text-label-lg">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-error hover:text-on-error hover:opacity-100 transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 md:mr-64 flex flex-col min-h-screen">
+<header class="bg-surface-bright dark:bg-inverse-surface shadow-sm dark:shadow-none docked full-width top-0 flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16 z-50 md:hidden sticky top-0">
+<h1 class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed">نظام بر</h1>
+<div class="flex gap-md">
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-secondary-container transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-secondary-container transition-colors p-sm rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<div class="flex-1 p-md md:p-margin-desktop max-w-[1440px] mx-auto w-full">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h2 class="font-display-md text-display-md text-on-background mb-xs">المهام</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">إدارة ومتابعة المهام المتعلقة بالحالات الاجتماعية.</p>
+</div>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg py-sm px-lg rounded-lg flex items-center gap-sm transition-colors shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined">add</span>
+                    إضافة مهمة جديدة
+                </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.04)] border border-outline-variant/30 overflow-hidden">
+<div class="p-lg border-b border-surface-variant flex flex-col sm:flex-row gap-md items-center justify-between bg-surface-bright">
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-sm rounded-full font-label-sm text-label-sm border border-primary bg-primary text-on-primary transition-colors">الكل (12)</button>
+<button class="px-md py-sm rounded-full font-label-sm text-label-sm border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">قيد الانتظار (3)</button>
+<button class="px-md py-sm rounded-full font-label-sm text-label-sm border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">قيد التنفيذ (5)</button>
+<button class="px-md py-sm rounded-full font-label-sm text-label-sm border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">مكتملة (2)</button>
+<button class="px-md py-sm rounded-full font-label-sm text-label-sm border border-error/50 text-error hover:bg-error-container transition-colors">متأخرة (2)</button>
+</div>
+<div class="relative w-full sm:w-auto">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full sm:w-64 pl-4 pr-10 py-2 bg-surface-container-low focus:bg-surface-container-lowest border-2 border-transparent focus:border-primary rounded-lg font-body-md text-body-md text-on-background outline-none transition-all placeholder:text-on-surface-variant" placeholder="بحث في المهام..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-variant font-label-lg text-label-lg text-on-surface-variant">
+<th class="p-lg whitespace-nowrap">عنوان المهمة</th>
+<th class="p-lg whitespace-nowrap">الحالة المرتبطة</th>
+<th class="p-lg whitespace-nowrap">المسؤول</th>
+<th class="p-lg whitespace-nowrap">تاريخ الاستحقاق</th>
+<th class="p-lg whitespace-nowrap">الأولوية</th>
+<th class="p-lg whitespace-nowrap">الحالة</th>
+<th class="p-lg whitespace-nowrap">إجراءات</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-surface-variant hover:bg-surface-container-lowest transition-colors group">
+<td class="p-lg">
+<div class="font-headline-sm text-headline-sm text-on-background">دراسة حالة أسرة محمد</div>
+<div class="text-label-sm text-on-surface-variant mt-xs">زيارة ميدانية وتقييم الاحتياجات</div>
+</td>
+<td class="p-lg text-secondary">#CS-2023-089</td>
+<td class="p-lg">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">أ.ع</div>
+<span>أحمد عبدالله</span>
+</div>
+</td>
+<td class="p-lg text-on-surface-variant">25 أكتوبر 2023</td>
+<td class="p-lg">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-md bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">priority_high</span> عالية
+                                    </span>
+</td>
+<td class="p-lg">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm border border-outline-variant">
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span> قيد الانتظار
+                                    </span>
+</td>
+<td class="p-lg">
+<button class="text-primary hover:text-primary-container p-sm rounded-full hover:bg-primary-fixed/20 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

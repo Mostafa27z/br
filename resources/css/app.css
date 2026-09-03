@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../js/**/*.tsx';
+
+@theme {
+    --font-sans: 'IBM Plex Sans Arabic', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    
+    --color-primary: #004532;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #065f46;
+    --color-on-primary-container: #8bd6b7;
+    --color-inverse-primary: #8bd6b6;
+    --color-surface-tint: #1b6b51;
+
+    --color-secondary: #545f73;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #d5e0f8;
+    --color-on-secondary-container: #586377;
+
+    --color-tertiary: #393d3f;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #505456;
+    --color-on-tertiary-container: #c5c8ca;
+
+    --color-background: #f8f9ff;
+    --color-on-background: #0b1c30;
+
+    --color-surface: #f8f9ff;
+    --color-surface-bright: #f8f9ff;
+    --color-surface-dim: #cbdbf5;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #eff4ff;
+    --color-surface-container: #e5eeff;
+    --color-surface-container-high: #dce9ff;
+    --color-surface-container-highest: #d3e4fe;
+    
+    --color-on-surface: #0b1c30;
+    --color-on-surface-variant: #3f4944;
+    --color-inverse-surface: #213145;
+    --color-inverse-on-surface: #eaf1ff;
+
+    --color-outline: #6f7973;
+    --color-outline-variant: #bec9c2;
+
+    --color-primary-fixed: #a6f2d1;
+    --color-primary-fixed-dim: #8bd6b6;
+    --color-on-primary-fixed: #002116;
+    --color-on-primary-fixed-variant: #00513b;
+
+    --color-secondary-fixed: #d8e3fb;
+    --color-secondary-fixed-dim: #bcc7de;
+    --color-on-secondary-fixed: #111c2d;
+    --color-on-secondary-fixed-variant: #3c475a;
+
+    --color-tertiary-fixed: #e0e3e5;
+    --color-tertiary-fixed-dim: #c4c7c9;
+    --color-on-tertiary-fixed: #191c1e;
+    --color-on-tertiary-fixed-variant: #444749;
+
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+
+    --radius-sm: 0.25rem;
+    --radius-default: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-gutter: 24px;
+    --spacing-margin-desktop: 48px;
+}
+
+@layer base {
+    body {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+    }
+}
+
+/* Custom Spacing & Gaps Utilities */
+@utility p-xs { padding: 4px; }
+@utility p-sm { padding: 8px; }
+@utility p-md { padding: 16px; }
+@utility p-lg { padding: 24px; }
+@utility p-xl { padding: 32px; }
+@utility p-margin-desktop { padding: 48px; }
+
+@utility px-xs { padding-left: 4px; padding-right: 4px; }
+@utility px-sm { padding-left: 8px; padding-right: 8px; }
+@utility px-md { padding-left: 16px; padding-right: 16px; }
+@utility px-lg { padding-left: 24px; padding-right: 24px; }
+@utility px-xl { padding-left: 32px; padding-right: 32px; }
+@utility px-margin-desktop { padding-left: 48px; padding-right: 48px; }
+
+@utility py-xs { padding-top: 4px; padding-bottom: 4px; }
+@utility py-sm { padding-top: 8px; padding-bottom: 8px; }
+@utility py-md { padding-top: 16px; padding-bottom: 16px; }
+@utility py-lg { padding-top: 24px; padding-bottom: 24px; }
+@utility py-xl { padding-top: 32px; padding-bottom: 32px; }
+
+@utility gap-xs { gap: 4px; }
+@utility gap-sm { gap: 8px; }
+@utility gap-md { gap: 16px; }
+@utility gap-lg { gap: 24px; }
+@utility gap-xl { gap: 32px; }
+@utility gap-gutter { gap: 24px; }
+
+@utility m-xs { margin: 4px; }
+@utility m-sm { margin: 8px; }
+@utility m-md { margin: 16px; }
+@utility m-lg { margin: 24px; }
+@utility m-xl { margin: 32px; }
+
+@utility mx-xs { margin-left: 4px; margin-right: 4px; }
+@utility mx-sm { margin-left: 8px; margin-right: 8px; }
+@utility mx-md { margin-left: 16px; margin-right: 16px; }
+@utility mx-lg { margin-left: 24px; margin-right: 24px; }
+@utility mx-xl { margin-left: 32px; margin-right: 32px; }
+
+@utility my-xs { margin-top: 4px; margin-bottom: 4px; }
+@utility my-sm { margin-top: 8px; margin-bottom: 8px; }
+@utility my-md { margin-top: 16px; margin-bottom: 16px; }
+@utility my-lg { margin-top: 24px; margin-bottom: 24px; }
+@utility my-xl { margin-top: 32px; margin-bottom: 32px; }
+
+@utility mb-xs { margin-bottom: 4px; }
+@utility mb-sm { margin-bottom: 8px; }
+@utility mb-md { margin-bottom: 16px; }
+@utility mb-lg { margin-bottom: 24px; }
+@utility mb-xl { margin-bottom: 32px; }
+
+@utility mt-xs { margin-top: 4px; }
+@utility mt-sm { margin-top: 8px; }
+@utility mt-md { margin-top: 16px; }
+@utility mt-lg { margin-top: 24px; }
+@utility mt-xl { margin-top: 32px; }
+
+@utility mr-xs { margin-right: 4px; }
+@utility mr-sm { margin-right: 8px; }
+@utility mr-md { margin-right: 16px; }
+@utility mr-lg { margin-right: 24px; }
+@utility mr-xl { margin-right: 32px; }
+
+@utility ml-xs { margin-left: 4px; }
+@utility ml-sm { margin-left: 8px; }
+@utility ml-md { margin-left: 16px; }
+@utility ml-lg { margin-left: 24px; }
+@utility ml-xl { margin-left: 32px; }
+
+/* Custom Typography Utilities */
+@utility text-display-lg { font-size: 48px; line-height: 60px; font-weight: 700; }
+@utility text-display-md { font-size: 36px; line-height: 44px; font-weight: 700; }
+@utility text-headline-lg { font-size: 30px; line-height: 38px; font-weight: 600; }
+@utility text-headline-md { font-size: 24px; line-height: 32px; font-weight: 600; }
+@utility text-headline-sm { font-size: 20px; line-height: 28px; font-weight: 600; }
+@utility text-body-lg { font-size: 18px; line-height: 28px; font-weight: 400; }
+@utility text-body-md { font-size: 16px; line-height: 24px; font-weight: 400; }
+@utility text-label-lg { font-size: 14px; line-height: 20px; font-weight: 500; }
+@utility text-label-sm { font-size: 12px; line-height: 16px; font-weight: 500; }
+
+@utility font-display-lg { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-display-md { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-headline-lg { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-headline-md { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-headline-sm { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-body-lg { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-body-md { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-label-lg { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+@utility font-label-sm { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@utility animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+

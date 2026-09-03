@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>استعادة كلمة المرور - نظام بر</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002116",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#1b6b51",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-tertiary-container": "#c5c8ca",
+                        "inverse-primary": "#8bd6b6",
+                        "surface-dim": "#cbdbf5",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#d8e3fb",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#065f46",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#8bd6b7",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#bec9c2",
+                        "outline": "#6f7973",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary-fixed": "#a6f2d1",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-surface-variant": "#3f4944",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#505456",
+                        "on-surface": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "secondary": "#545f73",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#00513b",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-secondary-container": "#586377",
+                        "tertiary": "#393d3f",
+                        "primary": "#004532",
+                        "surface-container-high": "#dce9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex antialiased">
+<!-- Split Screen Layout -->
+<div class="flex flex-col lg:flex-row w-full min-h-screen">
+<!-- Form Section (Right side in RTL, visually on the right, structurally first for mobile) -->
+<div class="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 lg:p-margin-desktop bg-surface-container-lowest z-10 shadow-[0_0_40px_rgba(0,0,0,0.05)] lg:shadow-none">
+<div class="w-full max-w-md space-y-xl">
+<!-- Brand Anchor -->
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-size: 24px;">volunteer_activism</span>
+</div>
+<span class="font-display-md text-display-md text-primary tracking-tight">نظام بر</span>
+</div>
+<!-- Header -->
+<div class="space-y-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">استعادة كلمة المرور</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        أدخل بريدك الإلكتروني المسجل لدينا وسنقوم بإرسال رابط لإنشاء كلمة مرور جديدة.
+                    </p>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-lg" method="POST">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="block font-label-lg text-label-lg text-on-surface" for="email">البريد الإلكتروني</label>
+<div class="relative">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<input class="block w-full bg-surface-container hover:bg-surface-container-high focus:bg-surface-container-lowest border-outline-variant focus:border-primary text-on-surface font-body-md rounded-lg py-3 pr-10 pl-4 focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all duration-200 outline-none placeholder:text-outline-variant text-left" dir="ltr" id="email" name="email" placeholder="name@organization.org" required="" type="email"/>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full flex justify-center items-center gap-sm bg-primary text-on-primary font-label-lg text-label-lg rounded-full py-4 px-6 hover:bg-on-primary-fixed-variant transition-colors duration-200 shadow-sm active:scale-[0.98]" type="submit">
+<span>إرسال رابط الاستعادة</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+<!-- Back to Login Link -->
+<div class="pt-md text-center">
+<a class="inline-flex items-center gap-xs font-label-lg text-label-lg text-primary hover:text-on-primary-fixed-variant transition-colors group" href="#">
+<span class="material-symbols-outlined text-[18px] transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<span>العودة لصفحة تسجيل الدخول</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Image Presentation Section (Left side in RTL) -->
+<div class="hidden lg:block lg:w-1/2 relative bg-surface-variant overflow-hidden">
+<!-- Decorative gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/90 to-transparent z-10 mix-blend-multiply opacity-40"></div>
+<!-- High-quality context image -->
+<img alt="Workspace Background" class="absolute inset-0 w-full h-full object-cover z-0" data-alt="A serene, modern professional workspace designed for a non-profit organization. The scene features minimalist white architecture, large windows letting in soft natural morning light, and lush indoor green plants. The atmosphere is calm, trustworthy, and evokes a sense of social impact and clarity. The color palette emphasizes pristine whites, soft grays, and natural wood tones, creating a perfect backdrop that complements an emerald green UI theme. High-end architectural photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgGZ9_XPYsSCwNq9mrjrvPdnLXQ3U9Bbs5GF3w742HVDXn6fGBGcJME5BjnBE3R4Oy8I5V7HXM1cobUbvNZVE-PA6mRuEkIPEzgKXtrDA-M8IV8hplk0JkZXEqh_C-OX7w8RCbNfSdxtWCOvEdKB9klbZ6b7IZRuxxe8zbf893NQUsxzDZrho1mgH3a02cJIyaET6GAISkFWu_E1ivvUutAhCjM5PHlBBs5heEsAVZLFdTd4HAVkYqRw"/>
+<!-- Inspirational Text Overlay -->
+<div class="absolute bottom-12 right-12 z-20 max-w-md text-on-primary">
+<blockquote class="font-headline-md text-headline-md leading-relaxed mb-sm">
+                    "العطاء ليس مجرد واجب، بل هو رحلة نحو بناء مجتمع أكثر تماسكاً وقوة."
+                </blockquote>
+<p class="font-body-md text-body-md opacity-80">
+                    نظام بر - لتمكين العمل المجتمعي.
+                </p>
+</div>
+</div>
+</div>
+</body></html>

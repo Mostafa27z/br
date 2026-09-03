@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إضافة مساعدة جديدة - بار</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#c5c8ca",
+                      "on-primary-container": "#8bd6b7",
+                      "on-secondary-fixed": "#111c2d",
+                      "surface-tint": "#1b6b51",
+                      "on-error-container": "#93000a",
+                      "on-surface-variant": "#3f4944",
+                      "primary-container": "#065f46",
+                      "tertiary-container": "#505456",
+                      "inverse-on-surface": "#eaf1ff",
+                      "secondary-container": "#d5e0f8",
+                      "on-secondary": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "surface-variant": "#d3e4fe",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed": "#002116",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#bec9c2",
+                      "surface-container": "#e5eeff",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-container": "#586377",
+                      "primary": "#004532",
+                      "surface-container-high": "#dce9ff",
+                      "secondary": "#545f73",
+                      "inverse-surface": "#213145",
+                      "on-primary-fixed-variant": "#00513b",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "on-tertiary-fixed": "#191c1e",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "inverse-primary": "#8bd6b6",
+                      "background": "#f8f9ff",
+                      "secondary-fixed": "#d8e3fb",
+                      "surface": "#f8f9ff",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline": "#6f7973",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#a6f2d1",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary": "#393d3f",
+                      "primary-fixed-dim": "#8bd6b6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "margin-desktop": "48px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "label-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "headline-md": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "label-sm": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "body-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "display-md": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "display-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "headline-lg": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "headline-sm": [
+                              "IBM Plex Sans Arabic"
+                      ],
+                      "body-md": [
+                              "IBM Plex Sans Arabic"
+                      ]
+              },
+              "fontSize": {
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-md": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "60px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased flex">
+<!-- SideNavBar -->
+<nav class="h-screen w-64 flex flex-col fixed right-0 top-0 bg-secondary-fixed dark:bg-inverse-surface border-l border-outline-variant shadow-md dark:shadow-lg z-40 hidden md:flex flex-col pt-16 transition-all duration-300">
+<div class="px-lg pb-xl flex flex-col gap-sm">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-secondary-fixed dark:text-on-surface">بار</h1>
+<p class="font-label-sm text-label-sm text-on-secondary-fixed-variant">نظام إدارة الحالات</p>
+</div>
+<div class="flex-1 px-sm flex flex-col gap-xs">
+<a class="flex items-center gap-md px-lg py-md text-on-secondary-fixed-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all rounded-l-full active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md text-on-secondary-fixed-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all rounded-l-full active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span class="font-label-lg text-label-lg">الحالات</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md bg-primary-container text-on-primary-container border-r-4 border-primary rounded-l-full active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-lg text-label-lg font-bold">المساعدات</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md text-on-secondary-fixed-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all rounded-l-full active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-label-lg text-label-lg">المهام</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md text-on-secondary-fixed-variant dark:text-on-tertiary-container hover:bg-surface-container-highest dark:hover:bg-surface-variant transition-all rounded-l-full active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-label-lg text-label-lg">التقارير</span>
+</a>
+</div>
+<div class="p-md mt-auto">
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-md rounded-lg flex items-center justify-center gap-sm hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+                إضافة حالة جديدة
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:mr-64 w-full min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-lg py-sm h-16 sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-primary p-sm rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary hidden md:block">بار</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-highest border-none rounded-full py-sm pl-xl pr-md text-on-surface focus:ring-2 focus:ring-primary focus:bg-surface w-64 transition-all" placeholder="بحث..." type="text"/>
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<button class="text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors p-sm rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-tertiary-container hover:bg-surface-container-high dark:hover:bg-surface-variant transition-colors p-sm rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 p-md md:p-margin-desktop w-full max-w-[1440px] mx-auto">
+<div class="mb-xl">
+<h2 class="font-display-sm md:font-display-md text-on-surface font-bold">إضافة مساعدة جديدة</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">يرجى تعبئة النموذج أدناه لتسجيل مساعدة جديدة.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.04)] border border-outline-variant p-lg md:p-xl max-w-3xl">
+<form class="space-y-xl">
+<!-- Searchable Dropdown (Simulated) -->
+<div class="relative">
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="case_select">اختيار الحالة <span class="text-error">*</span></label>
+<div class="relative">
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg py-md px-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:bg-surface-container-lowest transition-all" id="case_select" placeholder="ابحث عن رقم الهوية أو الاسم..." type="text"/>
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">search</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Type Dropdown -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="assistance_type">نوع المساعدة <span class="text-error">*</span></label>
+<select class="w-full bg-surface-container border border-outline-variant rounded-lg py-md px-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:bg-surface-container-lowest transition-all appearance-none cursor-pointer" id="assistance_type">
+<option disabled="" selected="" value="">اختر النوع</option>
+<option value="financial">مالية</option>
+<option value="food">تموينية</option>
+<option value="medical">طبية</option>
+<option value="housing">سكنية</option>
+</select>
+</div>
+<!-- Date Picker -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="assistance_date">تاريخ المساعدة <span class="text-error">*</span></label>
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg py-md px-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:bg-surface-container-lowest transition-all cursor-pointer" id="assistance_date" type="date"/>
+</div>
+</div>
+<!-- Radio Group -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-sm">طبيعة المساعدة <span class="text-error">*</span></label>
+<div class="flex gap-lg">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary cursor-pointer" name="assistance_nature" type="radio" value="financial_cash"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">نقدية / مالية</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary cursor-pointer" name="assistance_nature" type="radio" value="in_kind"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">عينية</span>
+</label>
+</div>
+</div>
+<!-- Financial Value -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="financial_value">القيمة المالية (إن وجدت)</label>
+<div class="relative">
+<input class="w-full bg-surface-container border border-outline-variant rounded-lg py-md pr-md pl-16 text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:bg-surface-container-lowest transition-all" id="financial_value" placeholder="0.00" type="number"/>
+<span class="absolute left-md top-1/2 -translate-y-1/2 font-label-lg text-on-surface-variant">ر.س</span>
+</div>
+</div>
+<!-- Description Textarea -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs" for="description">الوصف والتفاصيل</label>
+<textarea class="w-full bg-surface-container border border-outline-variant rounded-lg py-md px-md text-on-surface focus:ring-2 focus:ring-primary focus:border-primary focus:bg-surface-container-lowest transition-all resize-y" id="description" placeholder="اكتب تفاصيل المساعدة هنا..." rows="4"></textarea>
+</div>
+<!-- File Upload -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface mb-xs">المرفقات (فواتير، إيصالات، الخ)</label>
+<div class="mt-xs flex justify-center px-6 pt-5 pb-6 border-2 border-outline-variant border-dashed rounded-lg hover:border-primary hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="space-y-1 text-center">
+<span class="material-symbols-outlined text-[48px] text-on-surface-variant group-hover:text-primary transition-colors">upload_file</span>
+<div class="flex font-label-lg text-label-lg text-on-surface-variant justify-center">
+<label class="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary-container focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2" for="file-upload">
+<span>اختر ملفاً</span>
+<input class="sr-only" id="file-upload" multiple="" name="file-upload" type="file"/>
+</label>
+<p class="pr-1">أو اسحب وأفلت هنا</p>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">PNG, JPG, PDF حتى 10MB</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-md pt-lg border-t border-outline-variant mt-xl">
+<button class="bg-primary text-on-primary font-label-lg text-label-lg py-md px-xl rounded-lg hover:bg-primary-container hover:shadow-md transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="button">
+                            حفظ المساعدة
+                        </button>
+<button class="bg-transparent border border-primary text-primary font-label-lg text-label-lg py-md px-xl rounded-lg hover:bg-surface-container hover:text-primary-container transition-all active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="button">
+                            إلغاء
+                        </button>
+</div>
+</form>
+</div>
+</main>
+</div>
+</body></html>

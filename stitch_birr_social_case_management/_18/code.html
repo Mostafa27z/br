@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل الزيارة الميدانية</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#3f4944",
+                      "on-primary-fixed": "#002116",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-container": "#e5eeff",
+                      "primary": "#004532",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#dce9ff",
+                      "on-secondary-container": "#586377",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "primary-fixed": "#a6f2d1",
+                      "on-primary-fixed-variant": "#00513b",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#1b6b51",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "surface-variant": "#d3e4fe",
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#3c475a",
+                      "error-container": "#ffdad6",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-secondary-fixed": "#111c2d",
+                      "tertiary-container": "#505456",
+                      "on-primary-container": "#8bd6b7",
+                      "on-surface": "#0b1c30",
+                      "secondary-fixed": "#d8e3fb",
+                      "tertiary-fixed": "#e0e3e5",
+                      "secondary-fixed-dim": "#bcc7de",
+                      "primary-fixed-dim": "#8bd6b6",
+                      "outline-variant": "#bec9c2",
+                      "on-tertiary-container": "#c5c8ca",
+                      "secondary": "#545f73",
+                      "inverse-surface": "#213145",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#d5e0f8",
+                      "outline": "#6f7973",
+                      "background": "#f8f9ff",
+                      "inverse-primary": "#8bd6b6",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#eff4ff",
+                      "on-background": "#0b1c30",
+                      "tertiary": "#393d3f",
+                      "surface-bright": "#f8f9ff",
+                      "primary-container": "#065f46",
+                      "on-tertiary-fixed": "#191c1e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "margin-desktop": "48px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "xl": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-md": ["IBM Plex Sans Arabic"],
+                      "headline-sm": ["IBM Plex Sans Arabic"],
+                      "body-lg": ["IBM Plex Sans Arabic"],
+                      "label-lg": ["IBM Plex Sans Arabic"],
+                      "body-md": ["IBM Plex Sans Arabic"],
+                      "label-sm": ["IBM Plex Sans Arabic"],
+                      "headline-lg": ["IBM Plex Sans Arabic"],
+                      "display-md": ["IBM Plex Sans Arabic"],
+                      "display-lg": ["IBM Plex Sans Arabic"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                      "display-md": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "60px", "fontWeight": "700"}]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col fixed right-0 top-0 h-screen w-64 bg-on-background dark:bg-on-secondary-fixed-variant border-l border-outline-variant z-40">
+<!-- Header -->
+<div class="p-lg flex flex-col items-center border-b border-tertiary-container/30 text-center">
+<div class="w-16 h-16 bg-primary-container rounded-full flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-on-primary-container" style="font-size: 32px;">assured_workload</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim mt-xs">لإدارة الحالات الاجتماعية</p>
+</div>
+<!-- CTA -->
+<div class="px-md mt-lg mb-sm">
+<button class="w-full bg-primary text-on-primary font-label-lg text-label-lg py-sm rounded-DEFAULT flex justify-center items-center gap-xs hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+                إضافة حالة جديدة
+            </button>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto py-md space-y-base">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all font-label-lg text-label-lg" href="#">
+<span>الحالات</span>
+<span class="material-symbols-outlined ml-auto">folder_shared</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all font-label-lg text-label-lg" href="#">
+<span>المساعدات</span>
+<span class="material-symbols-outlined ml-auto">volunteer_activism</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all font-label-lg text-label-lg" href="#">
+<span>المهام</span>
+<span class="material-symbols-outlined ml-auto">assignment</span>
+</a>
+<!-- Active Tab -->
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all font-label-lg text-label-lg" href="#">
+<span>التقارير</span>
+<span class="material-symbols-outlined ml-auto" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</a>
+</div>
+<!-- Footer -->
+<div class="p-md border-t border-tertiary-container/30">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all font-label-lg text-label-lg" href="#">
+<span>تسجيل الخروج</span>
+<span class="material-symbols-outlined ml-auto">logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="md:mr-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16 z-50 bg-surface-bright dark:bg-inverse-surface shadow-sm sticky top-0">
+<div class="flex items-center gap-md">
+<span class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed">نظام بر</span>
+</div>
+<div class="flex items-center gap-lg flex-row-reverse">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-full py-xs pl-xl pr-md text-sm focus:border-primary focus:ring-1 focus:ring-primary w-64" placeholder="بحث..." type="text"/>
+</div>
+<div class="flex items-center gap-sm text-primary dark:text-primary-fixed">
+<button class="p-xs hover:bg-surface-container-low rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-xs hover:bg-surface-container-low rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="صورة المستخدم الشخصية" class="w-8 h-8 rounded-full border border-outline-variant ml-sm object-cover" data-alt="A professional headshot of a corporate employee in modern lighting, clear background, high quality, suitable for a minimalist dashboard profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBGoNmGSUqITW2oEwNR_hyL1-VthbZi97VCWFRn159B22N0QPZzLWv2ql0VQ7RBMiY1tKEnf6c8yro8JLDOhnwT6t6d1mCJPKjFpChn53K10x6wWN9RidP6kLKVgyPnjtjGbdAU0QcPLhs82k7gfwdrel2Y6E5ZCsF8vJr-MLFnpK5sQNvBrKRXPQfSjhTN9RUnNjvepUKBt5KCZ5tSb_0eomjL6mnLx2iy7pPwhGV_b1OE2xuUlOpiw"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 p-md md:p-margin-desktop">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-gutter gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded-full">مكتمل</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">رقم المرجع: #RV-2023-1042</span>
+</div>
+<h2 class="font-display-md text-display-md text-on-surface">تفاصيل الزيارة الميدانية</h2>
+</div>
+<div class="flex gap-sm w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-lg py-sm border border-primary text-primary hover:bg-surface-container-low rounded-DEFAULT font-label-lg text-label-lg transition-colors">
+<span class="material-symbols-outlined text-sm">print</span>
+                        طباعة
+                    </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-xs px-lg py-sm bg-primary text-on-primary hover:bg-surface-tint rounded-DEFAULT font-label-lg text-label-lg transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm">edit</span>
+                        تعديل التقرير
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Basic Info Card -->
+<div class="md:col-span-4 bg-surface-container-lowest shadow-sm rounded-lg p-lg border border-outline-variant/30 flex flex-col gap-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant/30 pb-sm">معلومات الزيارة</h3>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">التاريخ والوقت</p>
+<p class="font-body-md text-body-md text-on-surface">15 أكتوبر 2023 - 10:30 صباحاً</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">الباحث الاجتماعي</p>
+<p class="font-body-md text-body-md text-on-surface">أحمد محمود صالح</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">الموقع</p>
+<p class="font-body-md text-body-md text-on-surface">حي النسيم، الشارع العام، منزل رقم 45</p>
+</div>
+</div>
+</div>
+<!-- Main Description Card -->
+<div class="md:col-span-8 bg-surface-container-lowest shadow-sm rounded-lg p-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant/30 pb-sm mb-md">الوصف الكامل للزيارة</h3>
+<div class="prose max-w-none font-body-lg text-body-lg text-on-surface-variant space-y-md">
+<p>تمت زيارة الأسرة في مقر سكنهم للوقوف على حالتهم المعيشية بشكل مباشر بناءً على الطلب المقدم. يتكون المسكن من غرفتين وصالة بحالة إنشائية متهالكة وتحتاج إلى صيانة عاجلة للأسقف لتجنب تسرب مياه الأمطار.</p>
+<p>عائل الأسرة يعاني من ظروف صحية تمنعه من العمل المنتظم، وتم الاطلاع على التقارير الطبية التي تثبت ذلك. الأطفال في سن المدرسة ويحتاجون إلى مستلزمات دراسية عاجلة. مستوى الدخل الحالي لا يغطي الاحتياجات الأساسية من مأكل ومشرب.</p>
+<p>لوحظ نقص حاد في الأجهزة الكهربائية الأساسية كالثلاجة ومكيف الهواء، مما يزيد من صعوبة المعيشة خصوصاً في فصل الصيف.</p>
+</div>
+</div>
+<!-- Recommendations Card -->
+<div class="md:col-span-6 bg-surface-container-lowest shadow-sm rounded-lg p-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant/30 pb-sm mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">lightbulb</span>
+                        التوصيات المقترحة
+                    </h3>
+<ul class="space-y-sm">
+<li class="flex items-start gap-sm bg-surface p-sm rounded-DEFAULT border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">صرف مساعدة مالية مقطوعة بشكل عاجل لتغطية الاحتياجات الأساسية.</span>
+</li>
+<li class="flex items-start gap-sm bg-surface p-sm rounded-DEFAULT border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">إدراج الأسرة ضمن برنامج ترميم المنازل لصيانة سقف المسكن.</span>
+</li>
+<li class="flex items-start gap-sm bg-surface p-sm rounded-DEFAULT border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary-container mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">توفير سلة غذائية وحقائب مدرسية للأطفال.</span>
+</li>
+</ul>
+</div>
+<!-- Attachments Card -->
+<div class="md:col-span-6 bg-surface-container-lowest shadow-sm rounded-lg p-lg border border-outline-variant/30">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-outline-variant/30 pb-sm mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">attachment</span>
+                        المرفقات والصور
+                    </h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-md">
+<!-- Image Attachment -->
+<div class="relative group cursor-pointer rounded-DEFAULT overflow-hidden border border-outline-variant/30 aspect-square">
+<img alt="صورة حالة المبنى" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A close up shot of a slightly cracked house wall, showing signs of wear and needing repair. Natural daylight, neutral colors, documenting building condition for a non-profit assessment report." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEZZDitKOMCYlHTaBqAzaD1zNLn7pe8JJhvLg9s2CPq9QvLYj08p10VpRz8bgKPAf9PV3ksKcZMY5rrPir2ZIWJv2U1UHQqbRELYVwpvA94L4UscTSDYsmNx_RcInAietE9QDtnf6PqkwNCoc8uRZ3VaexWpkd-eDD7-3VB_ml9Ja09FWGaxnJqK9KVu67c2MkN13CxOvmoBIa2I8lcgDT-Gg-yaYytM2qaDTWQbQg3zZ7duQ-epaecg"/>
+<div class="absolute inset-0 bg-on-surface/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">zoom_in</span>
+</div>
+</div>
+<!-- Document Attachment -->
+<div class="relative group cursor-pointer rounded-DEFAULT overflow-hidden border border-outline-variant/30 aspect-square bg-surface flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 40px;">description</span>
+<span class="font-label-sm text-label-sm text-on-surface mt-sm text-center px-xs">التقرير_الطبي.pdf</span>
+</div>
+<!-- Document Attachment -->
+<div class="relative group cursor-pointer rounded-DEFAULT overflow-hidden border border-outline-variant/30 aspect-square bg-surface flex flex-col items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 40px;">description</span>
+<span class="font-label-sm text-label-sm text-on-surface mt-sm text-center px-xs">فاتورة_الكهرباء.jpg</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

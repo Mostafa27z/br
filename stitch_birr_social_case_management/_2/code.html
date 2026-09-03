@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الحالة الصحية والمستندات - نظام بر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#00513b",
+                        "on-secondary-container": "#586377",
+                        "surface-tint": "#1b6b51",
+                        "secondary-container": "#d5e0f8",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#545f73",
+                        "on-tertiary-container": "#c5c8ca",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#bec9c2",
+                        "surface": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-surface": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-container": "#505456",
+                        "primary-fixed": "#a6f2d1",
+                        "on-surface-variant": "#3f4944",
+                        "background": "#f8f9ff",
+                        "tertiary": "#393d3f",
+                        "outline": "#6f7973",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#111c2d",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container": "#e5eeff",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#8bd6b7",
+                        "inverse-primary": "#8bd6b6",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "primary-container": "#065f46",
+                        "primary": "#004532",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002116",
+                        "surface-container-highest": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin-desktop": "48px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile Only) -->
+<header class="flex md:hidden flex-row-reverse justify-between items-center px-4 w-full h-16 z-50 bg-surface-bright shadow-sm">
+<div class="font-headline-lg text-headline-lg font-black text-primary">نظام بر</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-low transition-colors rounded-full p-2" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-surface-container-low transition-colors rounded-full p-2" data-icon="settings">settings</span>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex fixed right-0 top-0 h-screen flex-col z-40 bg-on-background w-64 border-l border-outline-variant">
+<div class="p-lg flex flex-col items-center border-b border-outline-variant/20">
+<img class="w-16 h-16 rounded-full mb-4 object-cover" data-alt="A minimalist and modern logo for a social impact platform, featuring clean geometric shapes in deep emerald green against a crisp white background. The logo conveys trust, growth, and professional care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyVdy-sHLnchWA1UIo_Pu1gLW2A0bCS6V1Jf_wBl-swW8Av0FrgT5Nr6-MFxiP6VgcpQBxzJzcyupxXrAcG_uCJG-ygleBv9Y6FfLno7pHfcKShwnilsSISvlTlECteJ9W7fgxn9cgEeNnsHvW6p3d08kxfnm9FvBO8bpibsFvu-t7aac34LcNwtopxAPZbRorKi7DKzYmRs11YncAkDQPgFTNGulRAuBKg-p3g8sWe9uDgt_dpI_pbg"/>
+<h1 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-tertiary-fixed-dim mt-2">لإدارة الحالات الاجتماعية</p>
+<button class="mt-6 w-full bg-primary-fixed text-on-primary-fixed-variant font-label-lg text-label-lg py-2 rounded-lg hover:bg-primary-fixed-dim transition-colors">إضافة حالة جديدة</button>
+</div>
+<nav class="flex-1 mt-6">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+<span class="font-label-lg text-label-lg">الحالات</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:text-on-secondary-fixed-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-lg text-label-lg">المساعدات</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:text-on-secondary-fixed-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-lg text-label-lg">المهام</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:text-on-secondary-fixed-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-lg text-label-lg">التقارير</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="p-4 border-t border-outline-variant/20">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-error-container hover:text-on-error-container transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-lg text-label-lg">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full md:mr-64 p-4 md:p-margin-desktop bg-surface min-h-screen">
+<!-- Header -->
+<div class="flex justify-between items-center mb-8">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">ملف الحالة: #10452</h2>
+<p class="font-body-md text-body-md text-secondary mt-1">الحالة الصحية والمستندات - أحمد محمد</p>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-6 py-2 rounded-lg shadow-sm hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                تعديل السجل
+            </button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Health Status Column (Takes up 2 columns on large screens) -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Health Details Card -->
+<section class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-outline-variant/30">
+<div class="flex items-center gap-3 mb-6 border-b border-surface-variant pb-4">
+<div class="bg-error-container text-on-error-container p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">medical_information</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">التفاصيل الطبية</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">الحالة الأساسية</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">سكري من النوع الثاني</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">فصيلة الدم</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">O+</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">الحساسية</p>
+<div class="flex gap-2 mt-1">
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full">البنسلين</span>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-3 py-1 rounded-full">الفول السوداني</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-secondary mb-1">تاريخ آخر فحص</p>
+<p class="font-body-lg text-body-lg text-on-surface">15 أكتوبر 2023</p>
+</div>
+</div>
+<div class="mt-6">
+<p class="font-label-sm text-label-sm text-secondary mb-2">ملاحظات الطبيب</p>
+<div class="bg-surface p-4 rounded-lg border border-outline-variant/20 text-on-surface font-body-md text-body-md leading-relaxed">
+                            المريض مستقر حالياً. يحتاج إلى متابعة دورية لمستويات السكر في الدم. يوصى بالاستمرار على النظام الغذائي الموصوف وممارسة المشي الخفيف يومياً.
+                        </div>
+</div>
+</section>
+<!-- Medications & Treatments Card -->
+<section class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-center mb-6 border-b border-surface-variant pb-4">
+<div class="flex items-center gap-3">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">medication</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">الأدوية والعلاجات</h3>
+</div>
+<button class="text-primary font-label-sm text-label-sm hover:underline">عرض السجل الكامل</button>
+</div>
+<div class="space-y-4">
+<!-- Medication Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant/20 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline text-3xl">vaccines</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">ميتفورمين (Metformin)</h4>
+<p class="font-body-md text-body-md text-secondary mt-1">500mg - مرتين يومياً بعد الأكل</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full">مستمر</span>
+</div>
+<!-- Medication Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg border border-outline-variant/20 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline text-3xl">pill</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface">أملوديبين (Amlodipine)</h4>
+<p class="font-body-md text-body-md text-secondary mt-1">5mg - مرة واحدة صباحاً</p>
+</div>
+</div>
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-3 py-1 rounded-full">مستمر</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Documents Column (Takes up 1 column on large screens) -->
+<div class="lg:col-span-1">
+<section class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-outline-variant/30 h-full flex flex-col">
+<div class="flex justify-between items-center mb-6 border-b border-surface-variant pb-4">
+<div class="flex items-center gap-3">
+<div class="bg-surface-variant text-on-surface-variant p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">folder</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">المستندات المرفوعة</h3>
+</div>
+<span class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-2 py-1 rounded-full">3 ملفات</span>
+</div>
+<!-- Upload Area -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-6 flex flex-col items-center justify-center text-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer mb-6 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-2 group-hover:scale-110 transition-transform">upload_file</span>
+<p class="font-label-lg text-label-lg text-on-surface mb-1">رفع مستند جديد</p>
+<p class="font-label-sm text-label-sm text-secondary">PDF, JPG, PNG (الحد الأقصى 5MB)</p>
+</div>
+<!-- Documents List -->
+<div class="space-y-3 flex-1 overflow-y-auto pr-2" style="max-height: 400px;">
+<!-- Doc 1 -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/20 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-2xl">picture_as_pdf</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface truncate w-32 md:w-48">التقرير الطبي_أكتوبر2023.pdf</p>
+<p class="font-label-sm text-label-sm text-secondary">15 أكتوبر - 2.4 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary transition-colors">download</span>
+</div>
+<!-- Doc 2 -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/20 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">image</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface truncate w-32 md:w-48">نتيجة_التحليل_المعملي.jpg</p>
+<p class="font-label-sm text-label-sm text-secondary">10 أكتوبر - 1.1 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary transition-colors">download</span>
+</div>
+<!-- Doc 3 -->
+<div class="flex items-center justify-between p-3 bg-surface rounded-lg border border-outline-variant/20 hover:shadow-md transition-shadow cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error text-2xl">picture_as_pdf</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface truncate w-32 md:w-48">وصفة_طبية_تحديث.pdf</p>
+<p class="font-label-sm text-label-sm text-secondary">05 سبتمبر - 0.8 MB</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary transition-colors">download</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

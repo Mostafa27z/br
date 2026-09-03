@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تعديل بيانات الحالة - نظام بر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#00513b",
+                        "on-secondary-container": "#586377",
+                        "surface-tint": "#1b6b51",
+                        "secondary-container": "#d5e0f8",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#545f73",
+                        "on-tertiary-container": "#c5c8ca",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#bec9c2",
+                        "surface": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-surface": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-container": "#505456",
+                        "primary-fixed": "#a6f2d1",
+                        "on-surface-variant": "#3f4944",
+                        "background": "#f8f9ff",
+                        "tertiary": "#393d3f",
+                        "outline": "#6f7973",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#111c2d",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container": "#e5eeff",
+                        "inverse-surface": "#213145",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#8bd6b7",
+                        "inverse-primary": "#8bd6b6",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "primary-container": "#065f46",
+                        "primary": "#004532",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002116",
+                        "surface-container-highest": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "margin-desktop": "48px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex h-screen overflow-hidden">
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16 z-50 bg-surface-bright text-primary font-headline-sm text-headline-sm shadow-sm docked full-width top-0 fixed">
+<div class="flex items-center gap-sm">
+<span class="font-headline-lg text-headline-lg font-black text-primary">نظام بر</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-container-low transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-container-low transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="صورة المستخدم الشخصية" class="w-8 h-8 rounded-full object-cover" data-alt="A small, circular profile picture of an administrative user for a non-profit dashboard. The image should feature a professional avatar in a soft, modern light-mode setting with emerald and neutral tones. High quality, clear, and simple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv4hY4l_boaMQcghr39fI97RT3Ltm-zNm9L_Uf1srrjGJxzti62eIc0cssg6ulMOecWToSfIHg-TeeL9w3B47BsSlcUlkPG_L_t3RHpfIBkYRkHVfa2ZDNVTCch5ObHNb4HNzjzw-MHAFFrKscWhUPkn-NKQnqTDH67yRxC-T86GTE0s-di6ZTMtqy0btFRZvVS2Gua5MF4t4JS1DdJxT86BfqC_toTLJ3ceeI0WtuUGPaZu1TPWNhIg"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex fixed right-0 top-0 h-screen flex-col z-40 bg-on-background w-64 border-l border-outline-variant text-primary-fixed font-label-lg text-label-lg">
+<div class="flex flex-col items-center justify-center p-xl border-b border-outline-variant/20">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-sm">
+<img alt="شعار نظام بر" class="w-10 h-10 object-contain" data-alt="A stylized logo icon for a non-profit organization named 'نظام بر'. The logo should be modern, minimalist, and use emerald green tones on a white or very light neutral background. It should convey trust and growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjOwoGBvzRV_gYOh1HQGq-NddeX8-QQwCbxJegVbnMygAE2iM5Xw7OKlkMAPZetbkiN2W24Yq6rIRtERZro3OoYTjRlTfEIy5q5ZWIpXjtOWKzJ1VO9d-Ahs-OTGJho3CufVB0xaAmeZG78wpWyPvR8vb8IU0Ut-DbkQ_FRKhQsbREf1o-FypWwSpvLjSUR0IdPEOz9nPaX8mHsOffAunLpHyKKxUINVBBmbJEN5DJtLIZhi4hEnv0GA"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h1>
+<p class="text-tertiary-fixed text-sm opacity-80 mt-xs">لإدارة الحالات الاجتماعية</p>
+</div>
+<div class="px-md py-lg flex-1 overflow-y-auto space-y-sm">
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm rounded-lg hover:bg-secondary-fixed-variant transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+<span>الحالات</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 rounded-lg hover:bg-secondary-fixed-variant transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span>المساعدات</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 rounded-lg hover:bg-secondary-fixed-variant transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>المهام</span>
+</a>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 rounded-lg hover:bg-secondary-fixed-variant transition-all active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>التقارير</span>
+</a>
+<div class="mt-xl pt-lg border-t border-outline-variant/20">
+<button class="w-full bg-primary text-on-primary font-label-lg py-sm px-md rounded-full hover:bg-primary-container transition-colors shadow-sm flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                    إضافة حالة جديدة
+                </button>
+</div>
+</div>
+<div class="p-md mt-auto">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:text-error hover:bg-error/10 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 h-full overflow-y-auto md:mr-64 pt-16 md:pt-0 bg-surface-container-lowest">
+<!-- Page Header -->
+<div class="px-margin-desktop py-xl border-b border-surface-variant flex items-center justify-between bg-surface">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">تعديل بيانات الحالة</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">تحديث معلومات ملف رقم #48291</p>
+</div>
+<a class="flex items-center gap-xs text-primary hover:text-primary-container transition-colors font-label-lg" href="#">
+<span class="material-symbols-outlined rtl:rotate-180 text-sm">arrow_back</span>
+                العودة للتفاصيل
+            </a>
+</div>
+<!-- Form Container -->
+<div class="p-margin-desktop max-w-5xl mx-auto">
+<form class="space-y-xl">
+<!-- Section 1: Basic Info -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 p-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary-container mb-md border-b border-surface-variant pb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">person</span>
+                        البيانات الأساسية
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label-lg text-label-lg text-on-surface">الاسم الرباعي</label>
+<input class="w-full bg-surface border-2 border-surface-variant rounded-lg px-md py-sm focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-colors font-body-md text-on-surface" type="text" value="عبدالله محمد صالح العتيبي"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-lg text-label-lg text-on-surface">رقم الهوية الوطنية</label>
+<input class="w-full bg-surface-variant/30 border-2 border-surface-variant rounded-lg px-md py-sm text-on-surface-variant cursor-not-allowed font-body-md" disabled="" type="text" value="1029384756"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-lg text-label-lg text-on-surface">تاريخ الميلاد</label>
+<input class="w-full bg-surface border-2 border-surface-variant rounded-lg px-md py-sm focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-colors font-body-md text-on-surface text-left" dir="ltr" type="date" value="1980-05-15"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-lg text-label-lg text-on-surface">رقم الجوال</label>
+<input class="w-full bg-surface border-2 border-surface-variant rounded-lg px-md py-sm focus:bg-surface-container-lowest focus:border-primary focus:ring-0 transition-colors font-body-md text-on-surface text-left" dir="ltr" type="tel" value="0501234567"/>
+</div>
+</div>
+</section>
+<!-- Form Actions -->
+<div class="flex items-center justify-end gap-md pt-lg border-t border-surface-variant">
+<button class="px-xl py-sm rounded-full border border-primary text-primary font-label-lg hover:bg-primary/5 transition-colors" type="button">
+                        إلغاء
+                    </button>
+<button class="px-xl py-sm rounded-full bg-primary text-on-primary font-label-lg hover:bg-primary-container transition-colors shadow-sm flex items-center gap-xs" type="submit">
+<span class="material-symbols-outlined text-sm">save</span>
+                        حفظ التعديلات
+                    </button>
+</div>
+</form>
+</div>
+</main>
+</body></html>

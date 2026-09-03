@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام بر - ملف الحالة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#eff4ff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#00513b",
+                    "on-secondary-container": "#586377",
+                    "surface-tint": "#1b6b51",
+                    "secondary-container": "#d5e0f8",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#545f73",
+                    "on-tertiary-container": "#c5c8ca",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#bcc7de",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#bec9c2",
+                    "surface": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#3c475a",
+                    "on-surface": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-container": "#505456",
+                    "primary-fixed": "#a6f2d1",
+                    "on-surface-variant": "#3f4944",
+                    "background": "#f8f9ff",
+                    "tertiary": "#393d3f",
+                    "outline": "#6f7973",
+                    "secondary-fixed": "#d8e3fb",
+                    "tertiary-fixed": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#111c2d",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container": "#e5eeff",
+                    "inverse-surface": "#213145",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#8bd6b7",
+                    "inverse-primary": "#8bd6b6",
+                    "primary-fixed-dim": "#8bd6b6",
+                    "primary-container": "#065f46",
+                    "primary": "#004532",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#002116",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "margin-desktop": "48px",
+                    "base": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "headline-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "headline-md": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "body-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "label-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "label-sm": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "headline-sm": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "display-lg": [
+                            "IBM Plex Sans Arabic"
+                    ],
+                    "display-md": [
+                            "IBM Plex Sans Arabic"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "30px",
+                            {
+                                    "lineHeight": "38px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-lg": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "60px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-md": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-on-background fixed right-0 top-0 h-screen flex flex-col z-40 border-l border-outline-variant w-64 shadow-none hidden md:flex transition-transform duration-300">
+<!-- Header -->
+<div class="p-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full mb-md flex items-center justify-center border-2 border-primary-fixed shadow-inner">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">assured_workload</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary-fixed mb-xs">نظام بر</h1>
+<p class="font-label-sm text-label-sm text-tertiary-fixed opacity-70">لإدارة الحالات الاجتماعية</p>
+</div>
+<!-- CTA -->
+<div class="px-md mb-lg">
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg py-sm px-md rounded-lg shadow-sm transition-colors flex items-center justify-center gap-sm group active:scale-95 duration-200">
+<span class="material-symbols-outlined group-hover:rotate-90 transition-transform duration-300">add</span>
+                إضافة حالة جديدة
+            </button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 flex flex-col gap-xs px-sm overflow-y-auto">
+<!-- Active Tab: الحالات -->
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center justify-end gap-sm px-md py-sm rounded-l-lg hover:bg-secondary-fixed-variant transition-all active:translate-x-1 duration-200 group" href="#">
+<span class="font-label-lg text-label-lg">الحالات</span>
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1;">folder_shared</span>
+</a>
+<!-- Inactive Tab: المساعدات -->
+<a class="text-tertiary-fixed flex flex-row-reverse items-center justify-end gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:opacity-100 transition-all rounded-lg active:translate-x-1 duration-200 group" href="#">
+<span class="font-label-lg text-label-lg">المساعدات</span>
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">volunteer_activism</span>
+</a>
+<!-- Inactive Tab: المهام -->
+<a class="text-tertiary-fixed flex flex-row-reverse items-center justify-end gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:opacity-100 transition-all rounded-lg active:translate-x-1 duration-200 group" href="#">
+<span class="font-label-lg text-label-lg">المهام</span>
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">assignment</span>
+</a>
+<!-- Inactive Tab: التقارير -->
+<a class="text-tertiary-fixed flex flex-row-reverse items-center justify-end gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant hover:opacity-100 transition-all rounded-lg active:translate-x-1 duration-200 group" href="#">
+<span class="font-label-lg text-label-lg">التقارير</span>
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+</a>
+</nav>
+<!-- Footer -->
+<div class="p-md mt-auto border-t border-on-secondary-fixed-variant">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center justify-end gap-sm px-md py-sm opacity-80 hover:bg-error-container hover:text-on-error-container hover:opacity-100 transition-all rounded-lg group" href="#">
+<span class="font-label-lg text-label-lg">تسجيل الخروج</span>
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:mr-64 w-full">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface-bright shadow-sm flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16 z-30 sticky top-0 border-b border-surface-container-lowest">
+<!-- Brand / Mobile Menu -->
+<div class="flex items-center gap-md">
+<button class="md:hidden p-sm rounded-full hover:bg-surface-container-low text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-sm text-headline-sm font-black text-primary md:hidden">نظام بر</div>
+</div>
+<!-- Search Bar (on_left in LTR, so right side of flex container, left visually on screen) -->
+<div class="flex-1 max-w-md mx-auto hidden md:flex relative group">
+<div class="absolute inset-y-0 right-0 pl-3 flex items-center pointer-events-none pr-3">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-3 pr-10 py-2 border-0 bg-surface-container-low text-on-surface rounded-full text-body-md focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all placeholder:text-outline-variant" placeholder="البحث برقم الهوية أو الاسم..." type="text"/>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-sm">
+<button class="text-primary hover:bg-surface-container-low active:scale-95 duration-150 p-2 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-2 w-2 h-2 bg-error rounded-full animate-pulse"></span>
+</button>
+<button class="text-primary hover:bg-surface-container-low active:scale-95 duration-150 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-px h-6 bg-outline-variant mx-sm"></div>
+<button class="active:scale-95 duration-150 transition-transform">
+<img alt="صورة المستخدم الشخصية" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container shadow-sm" data-alt="A highly detailed close-up portrait of a professional social worker, smiling warmly. Natural bright lighting, office environment. High resolution, modern professional aesthetic. Green and neutral tones in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIERPQUVBJkLIf6HA56h1o-PqYE434m0_8m4Zj5HIn43ixeuF9fXHTXdCjz2JrAbxLRGenljWaLgbutiLrO6NOk6vBTifPVzSbHCTLlRXepUh_pgBFE-34Jxc0lGMsMqqTeu7dvs6145tzD81mzIaBWOP5gtuaVUcyCnn-dv9owxWyKuqiF1z1w_mAVydm4NHP6sCehfRLnPhlfH9REr2Fi19u0VNojPE8594_8dqlsg9KvTUi_q1peg"/>
+</button>
+</div>
+</header>
+<!-- Canvas / Page Content -->
+<main class="flex-1 p-lg md:p-xl xl:p-margin-desktop bg-surface max-w-[1440px] mx-auto w-full">
+<!-- Breadcrumbs & Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-4">
+<div>
+<nav class="flex text-label-sm text-secondary mb-xs">
+<ol class="inline-flex items-center space-x-1 space-x-reverse md:space-x-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">الحالات</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_left</span>
+<span class="text-on-surface">ملف الحالة #4892</span>
+</div>
+</li>
+</ol>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">ملف الحالة التفصيلي</h2>
+</div>
+<div class="flex gap-sm">
+<button class="px-4 py-2 border border-outline text-on-surface rounded-lg font-label-lg text-label-lg hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">print</span>
+                        طباعة الملف
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg hover:bg-primary-container shadow-sm hover:shadow transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_document</span>
+                        تحديث البيانات
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Identification Card (Spans full top row) -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-surface-container-low p-lg flex flex-col md:flex-row gap-lg items-start md:items-center relative overflow-hidden group hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)] transition-shadow duration-300">
+<!-- Decorative background blob -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-fixed/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+<!-- Avatar/Initials -->
+<div class="w-24 h-24 rounded-full bg-surface-container flex-shrink-0 flex items-center justify-center border-4 border-surface shadow-sm relative z-10">
+<span class="font-display-md text-display-md text-primary">ع.م</span>
+<div class="absolute -bottom-2 -right-2 bg-error text-on-error w-8 h-8 rounded-full flex items-center justify-center border-2 border-surface-container-lowest shadow-sm" title="أولوية عالية">
+<span class="material-symbols-outlined text-[18px]">priority_high</span>
+</div>
+</div>
+<!-- Core Info -->
+<div class="flex-1 z-10">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-sm gap-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs flex items-center gap-sm">
+                                    عبدالله محمد العتيبي
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-[10px] font-bold bg-primary-fixed text-on-primary-fixed-variant leading-none border border-primary/20">
+                                        حالة نشطة
+                                    </span>
+</h3>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-label-lg text-secondary">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">badge</span>
+<span>رقم الهوية: 1048392019</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_month</span>
+<span>تاريخ التسجيل: 15 مارس 2023</span>
+</div>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed mt-md p-md bg-surface-container-low/50 rounded-lg border border-surface-container-low">
+                            عائلة مكونة من 5 أفراد، العائل الأساسي فقد عمله مؤخراً بسبب ظروف صحية. يحتاجون لدعم مالي عاجل لتغطية تكاليف الإيجار والمواد الغذائية الأساسية. تم إجراء زيارة ميدانية وتقييم الوضع بشكل دقيق.
+                        </p>
+</div>
+<!-- Assigned Employee -->
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant/30 flex flex-col gap-sm min-w-[200px] z-10">
+<span class="font-label-sm text-label-sm text-tertiary-container uppercase tracking-wider">الباحث الاجتماعي المسؤول</span>
+<div class="flex items-center gap-sm">
+<img alt="صورة الباحث" class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="A close up portrait of a young arab man in a formal white thobe and shemagh. Professional corporate environment, soft light mode aesthetic, bright studio lighting. Minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA50-g3gqPJJQdjBL3r4JjH6Bi1XF78b_nHn8W6lgGpiv-cPeOqDXrtqpDiR_lVpx2tMWmEMgEgWLNyFUjt_W3HXqxmxsJY-Pb1daechiGrYVhL5gN9BQ3vpZTj4nCn_gv9q1MKPzjlNLNut-MTxoDCiuOCfWzGIrqmD3d7RZ86tVNffLyb18ZeBoBG7fNbmOcyutsP-clNVtm7yDAxZEeglG3wJTO2Ydob--lN1yzo4uVFsAiSF7gbaQ"/>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">خالد الدوسري</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-xs mt-1" href="tel:+966500000000">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                                    تواصل
+                                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Data Cards (3 Column Grid) -->
+<!-- Income Data -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-surface-container-low p-lg hover:shadow-md transition-shadow">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">بيانات الدخل</h4>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-sm border-b border-surface-container-low">
+<span class="font-body-md text-body-md text-secondary">حساب المواطن</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">1,200 ريال</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-surface-container-low">
+<span class="font-body-md text-body-md text-secondary">الضمان الاجتماعي</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">1,800 ريال</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-surface-container-low">
+<span class="font-body-md text-body-md text-secondary">دعم جمعيات أخرى</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">500 ريال</span>
+</div>
+</div>
+<div class="mt-lg pt-4 border-t-2 border-primary/10 flex justify-between items-center bg-surface-container-low/30 p-sm rounded-lg">
+<span class="font-label-lg text-label-lg text-on-surface">إجمالي الدخل الشهري</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">3,500 ريال</span>
+</div>
+</div>
+<!-- Marital Status -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-surface-container-low p-lg hover:shadow-md transition-shadow">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">family_restroom</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">الحالة الاجتماعية</h4>
+</div>
+<div class="grid grid-cols-2 gap-md mb-6">
+<div class="bg-surface-container-low p-sm rounded-lg border border-surface-container">
+<span class="block font-label-sm text-label-sm text-secondary mb-1">الحالة</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">متزوج</span>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg border border-surface-container">
+<span class="block font-label-sm text-label-sm text-secondary mb-1">عدد التابعين</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">4 أفراد</span>
+</div>
+</div>
+<div class="space-y-3">
+<span class="font-label-sm text-label-sm text-tertiary-container">بيانات التابعين</span>
+<ul class="space-y-2">
+<li class="flex justify-between items-center py-2 px-3 bg-surface rounded-md border border-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface text-sm">زوجة</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-1 rounded">35 سنة</span>
+</li>
+<li class="flex justify-between items-center py-2 px-3 bg-surface rounded-md border border-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface text-sm">إبن (طالب)</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-1 rounded">12 سنة</span>
+</li>
+<li class="flex justify-between items-center py-2 px-3 bg-surface rounded-md border border-surface-container-low">
+<span class="font-body-md text-body-md text-on-surface text-sm">إبنة</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-1 rounded">8 سنوات</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Housing Data -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-surface-container-low p-lg hover:shadow-md transition-shadow flex flex-col">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">house</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">بيانات السكن</h4>
+</div>
+<div class="space-y-4 flex-1">
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1">maps_home_work</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">نوع السكن</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold block mt-1">شقة إيجار (شهري)</span>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1">payments</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">قيمة الإيجار</span>
+<span class="font-label-lg text-label-lg text-error font-semibold block mt-1">1,500 ريال / شهر</span>
+</div>
+</div>
+<div class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-outline mt-1">location_on</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary">العنوان الوطني</span>
+<span class="font-body-md text-body-md text-on-surface block mt-1 leading-snug">
+                                    حي النسيم الغربي، شارع حسان بن ثابت<br/>
+                                    الرياض، المملكة العربية السعودية
+                                </span>
+</div>
+</div>
+</div>
+<!-- Mini Map Placeholder -->
+<div class="mt-md w-full h-32 rounded-lg bg-surface-container relative overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-multiply" data-alt="A stylized, minimalist digital map of Riyadh city center in light mode. Clean vector lines, subtle emerald green highlights for main roads, light gray background. Corporate and professional aesthetic." data-location="Riyadh" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdFN87poCTq1SciExbnt5dk-Jn0G7bBr7CE6NLgn2L91KkhPGMWWagHAtpqjus8O8BzIrpQE31glfyl2TwBidEehaIM2QVBCgrWL5GgwfrAHUGetReDyKboSUD-y2_DgNET5Op_LTud2ljrkR4nWBjl8BXmTjCxAiIuo5Z_5EDZ2iHgt2fFJll747qmU_e-Z3xE30bvicRAK5H0E2K2QDTzuxeaNoZ9FWaSeKWhXoTtr10VA0YfPD9cg')"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[32px] drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

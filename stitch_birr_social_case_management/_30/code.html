@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظام بر - تفاصيل التقرير</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-primary-fixed": "#002116",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-container": "#586377",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "secondary": "#545f73",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "inverse-primary": "#8bd6b6",
+                        "on-tertiary-container": "#c5c8ca",
+                        "on-primary-fixed-variant": "#00513b",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "tertiary-container": "#505456",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#d5e0f8",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#8bd6b7",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#1b6b51",
+                        "primary-container": "#065f46",
+                        "inverse-surface": "#213145",
+                        "primary-fixed": "#a6f2d1",
+                        "outline-variant": "#bec9c2",
+                        "secondary-fixed": "#d8e3fb",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#004532",
+                        "on-surface-variant": "#3f4944",
+                        "on-secondary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff",
+                        "tertiary": "#393d3f",
+                        "on-background": "#0b1c30",
+                        "outline": "#6f7973"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "md": "16px",
+                        "margin-desktop": "48px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface-bright dark:bg-inverse-surface shadow-sm dark:shadow-none flex flex-row-reverse justify-between items-center px-margin-desktop w-full h-16 z-50 fixed top-0 w-full">
+<div class="flex items-center gap-4 flex-row-reverse">
+<span class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed">نظام بر</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 rounded-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary text-sm w-64" placeholder="بحث..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-secondary-container transition-colors active:scale-95 duration-150 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low dark:hover:bg-secondary-container transition-colors active:scale-95 duration-150 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
+<img alt="صورة المستخدم الشخصية" class="w-full h-full object-cover" data-alt="A professional headshot of a user in a clean, brightly lit corporate setting. The individual has a neutral, approachable expression. The lighting is soft and even, highlighting a modern corporate environment. The overall tone is clean and minimalist, matching a bright light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH4tiLOtNp-fH8JMZyfnbX8mtt6qas0f9FBfLxtytCNVvjzzBe5KQ7kRzU_9Xn1seBNGILAZtunsjJTMWa6ZD8upCD04lrcgeO1oBoPTFcmg6kFtbdIxJtj5kj1kV7vSBByw2a-WoSYrk-i-uRboDZPW5yh076Cm6XHOmb_vONTyAQjS5Frhs7yVXR9FKsbBSlrLFl2FHqexz6PytfAd3bmUm02am02-55NHHqUQbPqVQ5eocNp_BxlQ"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar -->
+<nav class="hidden md:flex fixed right-0 top-0 h-screen flex-col z-40 bg-on-background dark:bg-on-secondary-fixed-variant border-l border-outline-variant w-64 pt-16 pb-lg justify-between">
+<div>
+<div class="px-md py-lg border-b border-outline-variant/20 mb-md flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary-fixed text-3xl">diversity_1</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary-fixed">نظام بر</h2>
+<p class="font-label-sm text-label-sm text-tertiary-fixed opacity-80 mt-1">لإدارة الحالات الاجتماعية</p>
+<button class="mt-lg w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-lg text-label-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> إضافة حالة جديدة
+                   </button>
+</div>
+<ul class="flex flex-col font-label-lg text-label-lg gap-1 px-sm">
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span>الحالات</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span>المساعدات</span>
+</a>
+</li>
+<li>
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span>المهام</span>
+</a>
+</li>
+<li>
+<a class="bg-primary-fixed-variant border-r-4 border-primary text-primary-fixed font-bold flex flex-row-reverse items-center gap-sm px-md py-sm rounded-l-lg rounded-r-none" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" data-weight="fill" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>التقارير</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="px-sm">
+<a class="text-tertiary-fixed flex flex-row-reverse items-center gap-sm px-md py-sm opacity-80 hover:bg-secondary-fixed-variant dark:hover:bg-on-surface-variant transition-all rounded-lg font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>تسجيل الخروج</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:mr-64 p-margin-desktop bg-surface-container-lowest">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center mb-xl gap-4">
+<div>
+<h1 class="font-display-md text-display-md text-on-surface mb-2">تقرير المساعدات الشامل</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">تحليل مفصل لتوزيع المساعدات خلال الربع الأول من عام 2024</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container border border-outline-variant rounded-lg font-label-lg text-label-lg text-on-surface hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+                        تصدير PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg shadow-sm hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-lg">print</span>
+                        طباعة
+                    </button>
+</div>
+</div>
+<!-- Filters Section (Glassmorphism) -->
+<div class="glass-card rounded-xl p-lg mb-xl shadow-sm">
+<div class="flex items-center gap-2 mb-md text-on-surface">
+<span class="material-symbols-outlined">tune</span>
+<h3 class="font-headline-sm text-headline-sm">فلاتر التقرير</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">الفترة الزمنية</label>
+<select class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface focus:ring-2 focus:ring-primary focus:border-primary">
+<option>الربع الأول 2024</option>
+<option>الربع الثاني 2024</option>
+<option>السنة الحالية</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">نوع المساعدة</label>
+<select class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface focus:ring-2 focus:ring-primary focus:border-primary">
+<option>الكل</option>
+<option>مالية</option>
+<option>عينية</option>
+<option>صحية</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">المنطقة</label>
+<select class="bg-surface border border-outline-variant rounded-lg px-3 py-2 text-on-surface focus:ring-2 focus:ring-primary focus:border-primary">
+<option>جميع المناطق</option>
+<option>المنطقة الشمالية</option>
+<option>المنطقة الجنوبية</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-secondary-container text-on-secondary-container py-2 rounded-lg font-label-lg text-label-lg hover:bg-secondary-container/80 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span> تطبيق الفلاتر
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Summary & Charts -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+<!-- Summary KPI Cards (Col Span 12, Sub-grid) -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -left-6 -top-6 w-24 h-24 bg-primary-container/10 rounded-full blur-xl"></div>
+<div class="flex justify-between items-start mb-4 z-10">
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-1">إجمالي المساعدات</p>
+<h3 class="font-display-md text-display-md text-on-surface">1.2M <span class="font-label-sm text-label-sm text-on-surface-variant">ريال</span></h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">payments</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sm text-primary z-10">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+15% عن الربع السابق</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden">
+<div class="flex justify-between items-start mb-4 z-10">
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-1">الحالات المستفيدة</p>
+<h3 class="font-display-md text-display-md text-on-surface">3,450</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-secondary-container/50 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">group</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sm text-primary z-10">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+5% عن الربع السابق</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden">
+<div class="flex justify-between items-start mb-4 z-10">
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-1">المتوسط للحالة</p>
+<h3 class="font-display-md text-display-md text-on-surface">347 <span class="font-label-sm text-label-sm text-on-surface-variant">ريال</span></h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sm text-on-surface-variant z-10">
+<span class="material-symbols-outlined text-sm">trending_flat</span>
+<span>ثابت تقريباً</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 flex flex-col justify-between relative overflow-hidden">
+<div class="flex justify-between items-start mb-4 z-10">
+<div>
+<p class="font-label-lg text-label-lg text-on-surface-variant mb-1">طلبات معلقة</p>
+<h3 class="font-display-md text-display-md text-error">142</h3>
+</div>
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-sm text-error z-10">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>يحتاج مراجعة عاجلة</span>
+</div>
+</div>
+</div>
+<!-- Main Chart (Col Span 8) -->
+<div class="col-span-12 md:col-span-8 bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 min-h-[400px]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">توزيع المساعدات عبر الأشهر</h3>
+<canvas id="barChart"></canvas>
+</div>
+<!-- Donut Chart (Col Span 4) -->
+<div class="col-span-12 md:col-span-4 bg-surface rounded-xl p-lg shadow-sm border border-outline-variant/30 min-h-[400px] flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">أنواع المساعدات</h3>
+<div class="flex-1 relative w-full max-w-[250px] mx-auto">
+<canvas id="donutChart"></canvas>
+</div>
+</div>
+</div>
+<!-- Detailed Data Table Section -->
+<div class="bg-surface rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden mb-xl">
+<div class="p-lg border-b border-outline-variant/30 flex justify-between items-center bg-surface-container-lowest">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">التفاصيل حسب المنطقة</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="pr-9 pl-4 py-1.5 rounded-lg border border-outline-variant text-sm focus:ring-1 focus:ring-primary focus:border-primary bg-surface w-48" placeholder="بحث في الجدول..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right font-body-md text-on-surface">
+<thead class="bg-surface-container-low font-label-lg text-label-lg text-on-surface-variant border-b border-outline-variant/30">
+<tr>
+<th class="py-4 px-6 font-medium">المنطقة</th>
+<th class="py-4 px-6 font-medium">عدد الحالات</th>
+<th class="py-4 px-6 font-medium">المبلغ الإجمالي</th>
+<th class="py-4 px-6 font-medium">النسبة من الإجمالي</th>
+<th class="py-4 px-6 font-medium">الحالة</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-4 px-6">المنطقة الشمالية</td>
+<td class="py-4 px-6">1,250</td>
+<td class="py-4 px-6">450,000 ريال</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 37%"></div>
+</div>
+<span class="text-xs">37%</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-tint/10 text-surface-tint rounded-md text-xs font-medium">مستقر</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-4 px-6">المنطقة الجنوبية</td>
+<td class="py-4 px-6">980</td>
+<td class="py-4 px-6">320,000 ريال</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 26%"></div>
+</div>
+<span class="text-xs">26%</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-error-container text-on-error-container rounded-md text-xs font-medium">احتياج عالي</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-4 px-6">المنطقة الشرقية</td>
+<td class="py-4 px-6">750</td>
+<td class="py-4 px-6">250,000 ريال</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-2 rounded-full" style="width: 20%"></div>
+</div>
+<span class="text-xs">20%</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-tint/10 text-surface-tint rounded-md text-xs font-medium">مستقر</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest/50 transition-colors">
+<td class="py-4 px-6">المنطقة الغربية</td>
+<td class="py-4 px-6">470</td>
+<td class="py-4 px-6">180,000 ريال</td>
+<td class="py-4 px-6">
+<div class="flex items-center gap-2">
+<div class="w-24 bg-surface-variant rounded-full h-2 overflow-hidden">
+<div class="bg-primary-fixed-dim h-2 rounded-full" style="width: 17%"></div>
+</div>
+<span class="text-xs">17%</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<span class="px-2 py-1 bg-surface-container-highest text-on-surface rounded-md text-xs font-medium">قيد المراجعة</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-outline-variant/30 bg-surface-container-lowest flex justify-between items-center text-sm text-on-surface-variant">
+<span>عرض 1 إلى 4 من 12 منطقة</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container-low disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container-low">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container-low">3</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Chart.js Initialization -->
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Colors from theme
+            const primaryColor = '#004532';
+            const primaryLight = '#065f46';
+            const secondaryColor = '#545f73';
+            const tertiaryColor = '#393d3f';
+            const gridColor = 'rgba(190, 201, 194, 0.2)'; // outline-variant with opacity
+            const textColor = '#3f4944'; // on-surface-variant
+
+            // Bar Chart Setup
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['يناير', 'فبراير', 'مارس'],
+                    datasets: [
+                        {
+                            label: 'مساعدات مالية',
+                            data: [450, 520, 480],
+                            backgroundColor: primaryColor,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'مساعدات عينية',
+                            data: [320, 290, 350],
+                            backgroundColor: primaryLight,
+                            borderRadius: 4
+                        },
+                        {
+                            label: 'مساعدات صحية',
+                            data: [150, 180, 160],
+                            backgroundColor: secondaryColor,
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'IBM Plex Sans Arabic', sans-serif" },
+                                color: textColor,
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                font: { family: "'IBM Plex Sans Arabic', sans-serif" },
+                                color: textColor
+                            }
+                        },
+                        y: {
+                            grid: { color: gridColor },
+                            ticks: {
+                                font: { family: "'IBM Plex Sans Arabic', sans-serif" },
+                                color: textColor
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Donut Chart Setup
+            const donutCtx = document.getElementById('donutChart').getContext('2d');
+            new Chart(donutCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['مالية', 'عينية', 'صحية', 'أخرى'],
+                    datasets: [{
+                        data: [45, 30, 15, 10],
+                        backgroundColor: [
+                            primaryColor,
+                            primaryLight,
+                            secondaryColor,
+                            tertiaryColor
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'IBM Plex Sans Arabic', sans-serif" },
+                                color: textColor,
+                                usePointStyle: true,
+                                padding: 15
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body></html>

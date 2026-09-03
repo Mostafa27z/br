@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تغيير كلمة المرور - نظام بر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#002116",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#1b6b51",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-tertiary-container": "#c5c8ca",
+                        "inverse-primary": "#8bd6b6",
+                        "surface-dim": "#cbdbf5",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#d8e3fb",
+                        "surface-container-low": "#eff4ff",
+                        "primary-container": "#065f46",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#8bd6b7",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "secondary-container": "#d5e0f8",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#bec9c2",
+                        "outline": "#6f7973",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary-fixed": "#a6f2d1",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-surface-variant": "#3f4944",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#505456",
+                        "on-surface": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "secondary": "#545f73",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#00513b",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-secondary-container": "#586377",
+                        "tertiary": "#393d3f",
+                        "primary": "#004532",
+                        "surface-container-high": "#dce9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "md": "16px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"],
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex items-center justify-center p-md md:p-margin-desktop antialiased">
+<!-- Main Container -->
+<main class="w-full max-w-md bg-surface-container-lowest rounded-xl shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-outline-variant/30 p-lg md:p-xl relative overflow-hidden">
+<!-- Decorative Header Element -->
+<div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-fixed to-primary-container"></div>
+<!-- Header Section -->
+<header class="text-center mb-xl">
+<!-- Brand Logo -->
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-low text-primary mb-md">
+<span class="material-symbols-outlined text-4xl" data-icon="lock_reset" style="font-variation-settings: 'FILL' 1;">lock_reset</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-sm">تغيير كلمة المرور</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">الرجاء إدخال كلمة المرور الحالية والجديدة لتحديث بياناتك.</p>
+</header>
+<!-- Form Section -->
+<form action="#" class="space-y-lg" method="POST">
+<!-- Current Password -->
+<div class="space-y-sm">
+<label class="block font-label-lg text-label-lg text-on-surface-variant" for="current_password">كلمة المرور الحالية</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border-2 border-transparent focus:border-primary focus:bg-surface-container-lowest rounded-lg px-md py-sm font-body-md text-body-md text-on-surface transition-all outline-none" id="current_password" name="current_password" placeholder="••••••••" type="password"/>
+<button class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<hr class="border-outline-variant/30"/>
+<!-- New Password -->
+<div class="space-y-sm">
+<label class="block font-label-lg text-label-lg text-on-surface-variant" for="new_password">كلمة المرور الجديدة</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border-2 border-transparent focus:border-primary focus:bg-surface-container-lowest rounded-lg px-md py-sm font-body-md text-body-md text-on-surface transition-all outline-none" id="new_password" name="new_password" placeholder="••••••••" type="password"/>
+<button class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/70">يجب أن تحتوي على 8 أحرف على الأقل، حرف كبير، ورقم.</p>
+</div>
+<!-- Confirm New Password -->
+<div class="space-y-sm">
+<label class="block font-label-lg text-label-lg text-on-surface-variant" for="confirm_password">تأكيد كلمة المرور الجديدة</label>
+<div class="relative">
+<input class="w-full bg-surface-bright border-2 border-transparent focus:border-primary focus:bg-surface-container-lowest rounded-lg px-md py-sm font-body-md text-body-md text-on-surface transition-all outline-none" id="confirm_password" name="confirm_password" placeholder="••••••••" type="password"/>
+<button class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-sm space-y-md">
+<button class="w-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg rounded-lg py-sm px-lg transition-all duration-200 shadow-[0_2px_8px_rgba(0,69,50,0.15)] hover:shadow-[0_4px_12px_rgba(0,69,50,0.25)] active:scale-[0.98] flex justify-center items-center gap-2" type="submit">
+<span class="material-symbols-outlined text-lg" data-icon="save">save</span>
+                    تحديث كلمة المرور
+                </button>
+<button class="w-full bg-transparent border-2 border-primary text-primary hover:bg-surface-container-low font-label-lg text-label-lg rounded-lg py-sm px-lg transition-all duration-200" type="button">
+                    إلغاء والعودة
+                </button>
+</div>
+</form>
+</main>
+<!-- Optional: Minimal Footer for context -->
+<footer class="absolute bottom-lg text-center w-full left-0 font-label-sm text-label-sm text-on-surface-variant/60">
+        نظام بر لإدارة الحالات الاجتماعية © 2024
+    </footer>
+<script>
+        // Simple password toggle logic for demonstration
+        document.querySelectorAll('button[type="button"]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.previousElementSibling;
+                const icon = this.querySelector('span');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.textContent = 'visibility';
+                    icon.setAttribute('data-icon', 'visibility');
+                } else {
+                    input.type = 'password';
+                    icon.textContent = 'visibility_off';
+                    icon.setAttribute('data-icon', 'visibility_off');
+                }
+            });
+        });
+    </script>
+</body></html>

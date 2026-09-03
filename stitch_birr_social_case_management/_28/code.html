@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>توزيع الحالة على موظف - نظام بر</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#505456",
+                        "on-background": "#0b1c30",
+                        "on-tertiary-container": "#c5c8ca",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#d5e0f8",
+                        "outline-variant": "#bec9c2",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#8bd6b6",
+                        "primary-container": "#065f46",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#8bd6b7",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#3f4944",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-container": "#586377",
+                        "tertiary": "#393d3f",
+                        "inverse-primary": "#8bd6b6",
+                        "outline": "#6f7973",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#002116",
+                        "background": "#f8f9ff",
+                        "primary-fixed": "#a6f2d1",
+                        "surface-container-high": "#dce9ff",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#545f73",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed": "#e0e3e5",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "primary": "#004532",
+                        "secondary-fixed": "#d8e3fb",
+                        "on-primary-fixed-variant": "#00513b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#1b6b51"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["IBM Plex Sans Arabic"],
+                        "label-sm": ["IBM Plex Sans Arabic"],
+                        "headline-sm": ["IBM Plex Sans Arabic"],
+                        "headline-lg": ["IBM Plex Sans Arabic"],
+                        "body-lg": ["IBM Plex Sans Arabic"],
+                        "display-lg": ["IBM Plex Sans Arabic"],
+                        "headline-md": ["IBM Plex Sans Arabic"],
+                        "body-md": ["IBM Plex Sans Arabic"],
+                        "display-md": ["IBM Plex Sans Arabic"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "60px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-md": ["36px", { "lineHeight": "44px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="h-16 fixed top-0 left-0 right-64 z-10 bg-surface border-b border-outline-variant shadow-sm flex items-center justify-between px-gutter w-full rtl transition-all">
+<div class="flex items-center gap-md">
+<!-- Search on right -->
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-4 pr-10 py-2 bg-surface-container-lowest border border-outline-variant rounded-full text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="بحث..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md ml-64"> <!-- Adjusted for sidebar -->
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-full transition-all cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-full transition-all cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-4">
+<img alt="صورة المستخدم" class="w-full h-full object-cover" data-alt="A small, circular profile picture of a professional individual in a corporate setting. The lighting is soft and flattering, suitable for a modern web application avatar. The background is slightly blurred to focus on the face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu_MirstS-42QNMxdgVIJoHKRE2H3tUuNV_QUD7a4ZWQ_dYs2NLhfR7DdZRmBoYumQBcYs_Nx6U-zpoWIcvzmrcBWDMPaYlTJGa2Tl_GJFQmuJimGzDsln8V-GC1o-wzicqJeib2brdVcYDNHqx5Yrkvg-hBgaUnHgpkU0tsKyyuqJ8aWJrpEm5ydkh2505Egyl6gkAJq3BcHtReO-5wrOcDqsEbfovfEQH31g56-932MffkPmt7yqUQ"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-secondary h-screen w-64 fixed right-0 top-0 border-l border-outline-variant shadow-sm flex flex-col h-full rtl z-20">
+<div class="p-6 flex flex-col items-center border-b border-outline-variant/30">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-lowest mb-4 flex items-center justify-center">
+<img alt="شعار نظام بر" class="w-full h-full object-contain p-2" data-alt="A modern, minimalist logo for a social impact platform named 'Nizam Birr'. The logo uses emerald green tones on a white background, symbolizing growth and trust. It is clean and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuOAS3-ofvPslX3JFPHORS4-kB1X2F5YEboZs01zGNopCA6KTSFE_BSCtgy4Io9QwmqoEqbF5j_z_yULoR_gz7oNdPyAmZsMuKnqrMYxnVoE1MsBi3ce13AwBXfDJvZGwQjl_E4O0xrufq2VpwFA0wAYYcVGsT6EQNVQZV-QKsH_em4BabNTmREGShtUnCA0SQYIMyHEzik0c5_XFr2VLg9ei-TyxcGUdV8YHqMHCE-M2_kighOFA3IQ"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">نظام بر</h1>
+<p class="font-body-md text-body-md text-on-secondary/80 mt-1">إدارة الحالات الاجتماعية</p>
+</div>
+<div class="flex flex-col mt-6 flex-grow overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-200 hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-transform font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                لوحة التحكم
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary bg-surface-bright border-r-4 border-primary transition-colors duration-200 active:scale-95 transition-transform font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                الحالات
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-200 hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-transform font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+                المساعدات
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-200 hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-transform font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+                المهام
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary hover:bg-on-secondary-fixed-variant transition-colors duration-200 hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-transform font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+                التقارير
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 mr-64 mt-16 p-margin-desktop bg-background flex justify-center items-start min-h-[calc(100vh-4rem)]">
+<!-- Central Card -->
+<div class="bg-surface-container-lowest rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-outline-variant/30 w-full max-w-2xl overflow-hidden mt-8">
+<!-- Card Header -->
+<div class="px-lg py-6 border-b border-outline-variant/30 bg-surface-bright/50">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">توزيع الحالة على موظف</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">قم بإسناد هذه الحالة إلى أحد الباحثين الاجتماعيين لمتابعتها.</p>
+</div>
+<div class="p-lg flex flex-col gap-xl">
+<!-- Case Summary Mini-Card -->
+<div class="bg-surface-container-low rounded p-md border border-outline-variant/50 flex flex-col gap-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface mb-2">تفاصيل الحالة (موجز)</h3>
+<div class="grid grid-cols-2 gap-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">اسم الحالة</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">عائلة محمد عبد الله</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">المحافظة</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">الرياض</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">رقم الملف</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">#CAS-2023-894</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-1">الأولوية</span>
+<span class="inline-flex items-center px-2 py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">
+                                عاجلة
+                            </span>
+</div>
+</div>
+</div>
+<!-- Assignment Form -->
+<form class="flex flex-col gap-lg">
+<!-- Employee Dropdown -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface" for="employeeSelect">الموظف المسؤول (الباحث الاجتماعي)</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-2 border-outline-variant rounded px-4 py-3 appearance-none focus:outline-none focus:border-primary font-body-md text-body-md text-on-surface transition-colors cursor-pointer" id="employeeSelect">
+<option disabled="" selected="" value="">اختر الموظف...</option>
+<option value="1">أحمد سلمان (باحث رئيسي - منطقة الرياض)</option>
+<option value="2">فاطمة الزهراء (باحثة - شمال الرياض)</option>
+<option value="3">خالد العتيبي (باحث - جنوب الرياض)</option>
+<option value="4">سارة الدوسري (باحثة - شرق الرياض)</option>
+</select>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Date Picker -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface" for="assignmentDate">تاريخ الإسناد</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-2 border-outline-variant rounded px-4 py-3 focus:outline-none focus:border-primary font-body-md text-body-md text-on-surface transition-colors cursor-pointer" id="assignmentDate" type="date"/>
+</div>
+</div>
+<!-- Additional Notes -->
+<div class="flex flex-col gap-2">
+<label class="font-label-lg text-label-lg text-on-surface" for="additionalNotes">ملاحظات إضافية (اختياري)</label>
+<textarea class="w-full bg-surface-container-lowest border-2 border-outline-variant rounded px-4 py-3 focus:outline-none focus:border-primary font-body-md text-body-md text-on-surface transition-colors resize-none" id="additionalNotes" placeholder="أضف أي توجيهات خاصة للموظف بخصوص هذه الحالة..." rows="3"></textarea>
+</div>
+</form>
+<!-- Alert Banner -->
+<div class="bg-surface-variant border-r-4 border-primary rounded p-4 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold mb-1">إشعار فوري</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">سيتم إرسال إشعار فوري (عبر النظام والبريد الإلكتروني) للموظف المختار فور إتمام عملية التوزيع.</p>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="px-lg py-6 bg-surface-bright/50 border-t border-outline-variant/30 flex gap-4 justify-end items-center">
+<button class="px-6 py-2.5 rounded font-label-lg text-label-lg border-2 border-transparent text-on-surface-variant hover:bg-surface-container-highest transition-colors" type="button">
+                    إلغاء
+                </button>
+<button class="px-6 py-2.5 rounded font-label-lg text-label-lg bg-primary text-on-primary shadow-sm hover:bg-primary-container transition-colors flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    إتمام عملية التوزيع
+                </button>
+</div>
+</div>
+</main>
+</body></html>
