@@ -23,79 +23,79 @@ export default function Main({ stats }: MainProps) {
         <Layout title="لوحة التحكم - نظرة عامة">
             <Head title="لوحة التحكم" />
             
-            <div className="mb-8">
-                <h1 className="text-display-md font-display-md text-on-surface">نظرة عامة</h1>
-                <p className="text-body-lg font-body-lg text-on-surface-variant mt-2">مرحباً بك، إليك ملخص نشاط النظام اليوم.</p>
+            <div className="mb-6">
+                <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">نظرة عامة</h1>
+                <p className="text-sm sm:text-base text-on-surface-variant mt-1">مرحباً بك، إليك ملخص نشاط النظام اليوم.</p>
             </div>
 
             {/* Quick Links / Dashboard Tabs */}
-            <div className="flex gap-sm mb-lg border-b border-outline-variant/30 pb-sm overflow-x-auto">
-                <Link href={route('dashboard')} className="px-lg py-sm font-label-lg rounded-full bg-primary text-on-primary font-bold whitespace-nowrap">
+            <div className="flex gap-2 mb-6 border-b border-outline-variant/30 pb-2 overflow-x-auto scrollbar-none">
+                <Link href={route('dashboard')} className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full bg-primary text-on-primary font-bold whitespace-nowrap shadow-xs shrink-0">
                     الملخص العام
                 </Link>
-                <Link href={route('dashboard.social')} className="px-lg py-sm font-label-lg rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap transition-colors">
+                <Link href={route('dashboard.social')} className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap transition-colors shrink-0">
                     الإحصاءات الاجتماعية
                 </Link>
-                <Link href={route('dashboard.financial')} className="px-lg py-sm font-label-lg rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap transition-colors">
+                <Link href={route('dashboard.financial')} className="px-4 py-2 text-xs sm:text-sm font-medium rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface whitespace-nowrap transition-colors shrink-0">
                     الإحصاءات المالية
                 </Link>
             </div>
 
             {/* Bento Grid Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
                 {/* Stat 1 */}
-                <div className="bg-white rounded-xl p-lg border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-4">
-                        <div className="p-3 bg-surface-container-highest rounded-lg text-primary">
-                            <span className="material-symbols-outlined text-[28px]">folder_shared</span>
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-outline-variant/30 flex flex-col justify-between hover:shadow-sm transition-shadow shadow-xs">
+                    <div className="flex justify-between items-start mb-3">
+                        <div className="p-2.5 bg-surface-container-highest rounded-xl text-primary">
+                            <span className="material-symbols-outlined text-[24px]">folder_shared</span>
                         </div>
-                        <span className="text-xs bg-primary-fixed text-on-primary-fixed px-sm py-xs rounded-full font-bold">الحالات</span>
+                        <span className="text-xs bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded-full font-bold">الحالات</span>
                     </div>
                     <div>
-                        <p className="text-body-md text-on-surface-variant">إجمالي الحالات المسجلة</p>
-                        <h3 className="text-display-md font-display-md text-on-surface mt-1">{stats.total_cases}</h3>
+                        <p className="text-xs sm:text-sm text-on-surface-variant">إجمالي الحالات المسجلة</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-on-surface mt-1">{stats.total_cases}</h3>
                     </div>
                 </div>
 
                 {/* Stat 2 */}
-                <div className="bg-white rounded-xl p-lg border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow border-r-4 border-r-primary">
-                    <div className="flex justify-between items-start mb-4">
-                        <div className="p-3 bg-primary-container text-on-primary-container rounded-lg">
-                            <span className="material-symbols-outlined text-[28px]">verified</span>
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-outline-variant/30 flex flex-col justify-between hover:shadow-sm transition-shadow shadow-xs border-r-4 border-r-primary">
+                    <div className="flex justify-between items-start mb-3">
+                        <div className="p-2.5 bg-primary-container text-on-primary-container rounded-xl">
+                            <span className="material-symbols-outlined text-[24px]">verified</span>
                         </div>
-                        <span className="text-xs bg-emerald-50 text-emerald-800 px-sm py-xs rounded-full font-bold">تحت الدراسة</span>
+                        <span className="text-xs bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded-full font-bold">تحت الدراسة</span>
                     </div>
                     <div>
-                        <p className="text-body-md text-on-surface-variant">الحالات النشطة</p>
-                        <h3 className="text-display-md font-display-md text-on-surface mt-1">{stats.active_cases}</h3>
+                        <p className="text-xs sm:text-sm text-on-surface-variant">الحالات النشطة</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-on-surface mt-1">{stats.active_cases}</h3>
                     </div>
                 </div>
 
                 {/* Stat 3 */}
-                <div className="bg-white rounded-xl p-lg border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-4">
-                        <div className="p-3 bg-secondary-container text-on-secondary-container rounded-lg">
-                            <span className="material-symbols-outlined text-[28px]">payments</span>
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-outline-variant/30 flex flex-col justify-between hover:shadow-sm transition-shadow shadow-xs">
+                    <div className="flex justify-between items-start mb-3">
+                        <div className="p-2.5 bg-secondary-container text-on-secondary-container rounded-xl">
+                            <span className="material-symbols-outlined text-[24px]">payments</span>
                         </div>
-                        <span className="text-xs bg-blue-50 text-blue-800 px-sm py-xs rounded-full font-bold">هذا الشهر</span>
+                        <span className="text-xs bg-blue-50 text-blue-800 px-2.5 py-0.5 rounded-full font-bold">هذا الشهر</span>
                     </div>
                     <div>
-                        <p className="text-body-md text-on-surface-variant">قيمة مساعدات الشهر</p>
-                        <h3 className="text-headline-lg font-headline-lg text-on-surface mt-1">{stats.monthly_assistance.toLocaleString('ar-SA')} جنيه مصري</h3>
+                        <p className="text-xs sm:text-sm text-on-surface-variant">قيمة مساعدات الشهر</p>
+                        <h3 className="text-xl sm:text-2xl font-bold text-on-surface mt-1">{stats.monthly_assistance.toLocaleString('ar-SA')} جنيه مصري</h3>
                     </div>
                 </div>
 
                 {/* Stat 4 */}
-                <div className="bg-white rounded-xl p-lg border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-start mb-4">
-                        <div className="p-3 bg-surface-variant text-on-surface-variant rounded-lg">
-                            <span className="material-symbols-outlined text-[28px]">family_restroom</span>
+                <div className="bg-white rounded-2xl p-4 sm:p-6 border border-outline-variant/30 flex flex-col justify-between hover:shadow-sm transition-shadow shadow-xs">
+                    <div className="flex justify-between items-start mb-3">
+                        <div className="p-2.5 bg-surface-variant text-on-surface-variant rounded-xl">
+                            <span className="material-symbols-outlined text-[24px]">family_restroom</span>
                         </div>
-                        <span className="text-xs bg-purple-50 text-purple-800 px-sm py-xs rounded-full font-bold">متوسط</span>
+                        <span className="text-xs bg-purple-50 text-purple-800 px-2.5 py-0.5 rounded-full font-bold">متوسط</span>
                     </div>
                     <div>
-                        <p className="text-body-md text-on-surface-variant">معدل حجم الأسرة</p>
-                        <h3 className="text-display-md font-display-md text-on-surface mt-1">{stats.avg_family_size} أفراد</h3>
+                        <p className="text-xs sm:text-sm text-on-surface-variant">معدل حجم الأسرة</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-on-surface mt-1">{stats.avg_family_size} أفراد</h3>
                     </div>
                 </div>
             </div>

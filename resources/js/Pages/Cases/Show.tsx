@@ -149,39 +149,39 @@ export default function Show({ socialCase, employees }: ShowProps) {
             <Head title={`ملف ${socialCase.name}`} />
 
             {/* Header info */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b border-outline-variant/20 pb-md">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 border-b border-outline-variant/20 pb-4">
                 <div>
-                    <div className="flex items-center gap-xs text-on-surface-variant text-sm mb-xs">
+                    <div className="flex items-center gap-1 text-on-surface-variant text-xs sm:text-sm mb-1">
                         <Link href={route('cases.index')} className="hover:text-primary">الحالات الاجتماعية</Link>
-                        <span className="material-symbols-outlined text-[16px]">chevron_left</span>
+                        <span className="material-symbols-outlined text-[14px]">chevron_left</span>
                         <span>{socialCase.name}</span>
                     </div>
-                    <h1 className="font-display-md text-display-md text-on-surface flex items-center gap-sm">
-                        {socialCase.name}
-                        <span className="text-xs px-sm py-xs rounded-full font-bold bg-surface-container-low text-on-surface">رقم الملف: {socialCase.id}</span>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-on-surface flex flex-wrap items-center gap-2">
+                        <span>{socialCase.name}</span>
+                        <span className="text-xs px-2.5 py-1 rounded-full font-bold bg-surface-container-low text-on-surface border border-outline-variant/30">رقم الملف: {socialCase.id}</span>
                     </h1>
                 </div>
 
-                <div className="flex items-center gap-sm">
-                    <Link href={route('cases.edit', socialCase.id)} className="bg-white border border-outline-variant/30 text-on-surface font-label-lg text-label-lg px-md py-sm rounded-lg hover:bg-surface-container transition-all">
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <Link href={route('cases.edit', socialCase.id)} className="flex-1 sm:flex-initial text-center bg-white border border-outline-variant/30 text-on-surface text-xs sm:text-sm font-medium px-4 py-2 rounded-xl hover:bg-surface-container transition-all">
                         تعديل البيانات
                     </Link>
-                    <Link href={route('cases.timeline', socialCase.id)} className="bg-primary-container text-on-primary-container font-label-lg text-label-lg px-md py-sm rounded-lg hover:bg-primary hover:text-white transition-all flex items-center gap-xs">
-                        <span className="material-symbols-outlined text-[18px]">history</span>
-                        السجل الزمني
+                    <Link href={route('cases.timeline', socialCase.id)} className="flex-1 sm:flex-initial text-center bg-primary-container text-on-primary-container text-xs sm:text-sm font-medium px-4 py-2 rounded-xl hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-1">
+                        <span className="material-symbols-outlined text-[16px]">history</span>
+                        <span>السجل الزمني</span>
                     </Link>
                 </div>
             </div>
 
             {/* Quick Details Sidebar + Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 
                 {/* Left Card: Case Meta (Col 1-4) */}
-                <div className="lg:col-span-4 flex flex-col gap-lg">
+                <div className="lg:col-span-4 flex flex-col gap-6">
                     {/* Basic Info Box */}
-                    <div className="bg-white rounded-xl border border-outline-variant/30 p-lg shadow-sm">
-                        <h3 className="font-headline-sm text-on-surface mb-md">البيانات الأساسية</h3>
-                        <div className="space-y-sm text-body-md">
+                    <div className="bg-white rounded-2xl border border-outline-variant/30 p-4 sm:p-6 shadow-xs">
+                        <h3 className="text-base sm:text-lg font-bold text-on-surface mb-4">البيانات الأساسية</h3>
+                        <div className="space-y-3 text-sm">
                             <div>
                                 <span className="text-outline text-xs block">الهوية الوطنية</span>
                                 <span className="font-bold text-on-surface font-mono">{socialCase.national_id}</span>
@@ -193,26 +193,37 @@ export default function Show({ socialCase, employees }: ShowProps) {
                             <div>
                                 <span className="text-outline text-xs block">العنوان</span>
                                 <span className="font-bold text-on-surface">{socialCase.governorate} - {socialCase.district}</span>
-                                <p className="text-xs text-on-surface-variant mt-xs">{socialCase.detailed_address}</p>
+                                <p className="text-xs text-on-surface-variant mt-0.5">{socialCase.detailed_address}</p>
                             </div>
                             <div>
                                 <span className="text-outline text-xs block">الحالة الاجتماعية</span>
                                 <span className="font-bold text-on-surface">{socialCase.marital_status}</span>
                             </div>
+                            <div>
+                                <span className="text-outline text-xs block">حالة الملف والأولوية</span>
+                                <div className="flex items-center gap-2 mt-1">
+                                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-primary/10 text-primary">
+                                        {socialCase.status}
+                                    </span>
+                                    <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 text-amber-800">
+                                        {socialCase.priority}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Assignment Settings */}
-                    <div className="bg-white rounded-xl border border-outline-variant/30 p-lg shadow-sm">
-                        <h3 className="font-headline-sm text-on-surface mb-sm">توزيع الباحث المسؤول</h3>
-                        {isAdmin ? (
-                            <form onSubmit={handleAssign} className="flex flex-col gap-sm">
+                    {/* Assigned Employee Box */}
+                    {isAdmin && (
+                        <div className="bg-white rounded-2xl border border-outline-variant/30 p-4 sm:p-6 shadow-xs">
+                            <h3 className="text-base sm:text-lg font-bold text-on-surface mb-3">الباحث المكلّف</h3>
+                            <form onSubmit={handleAssign} className="space-y-3">
                                 <select 
-                                    className="w-full px-sm py-sm bg-background border border-outline-variant/60 rounded-lg text-body-md"
+                                    className="w-full px-3 py-2 bg-surface-container-low/50 border border-outline-variant/60 rounded-xl text-sm"
                                     value={assignForm.data.assigned_to}
                                     onChange={e => assignForm.setData('assigned_to', e.target.value)}
                                 >
-                                    <option value="">غير معين</option>
+                                    <option value="">بدون باحث مكلّف</option>
                                     {employees.map(emp => (
                                         <option key={emp.id} value={emp.id}>{emp.name}</option>
                                     ))}
@@ -220,30 +231,27 @@ export default function Show({ socialCase, employees }: ShowProps) {
                                 <button 
                                     type="submit" 
                                     disabled={assignForm.processing}
-                                    className="bg-primary text-on-primary font-bold px-md py-sm rounded-lg text-xs hover:bg-primary-container transition-all"
+                                    className="w-full bg-primary hover:bg-primary-container text-on-primary py-2 rounded-xl text-sm font-medium transition-colors"
                                 >
-                                    حفظ التعديل
+                                    حفظ التكليف
                                 </button>
                             </form>
-                        ) : (
-                            <div className="text-body-md font-bold text-primary">
-                                {socialCase.assigned_employee?.name || 'غير معين لموظف'}
-                            </div>
-                        )}
-                    </div>
+                        </div>
+                    )}
                 </div>
 
-                {/* Right Card: Content Tab View (Col 1-8) */}
-                <div className="lg:col-span-8 flex flex-col gap-lg">
-                    {/* Tab Navigation */}
-                    <div className="flex gap-sm border-b border-outline-variant/20 pb-sm overflow-x-auto">
+                {/* Right Area: Dynamic Tabs (Col 5-12) */}
+                <div className="lg:col-span-8 flex flex-col gap-6 min-w-0">
+                    
+                    {/* Tabs Header */}
+                    <div className="flex border-b border-outline-variant/30 px-2 sm:px-4 pt-2 gap-1.5 sm:gap-2 overflow-x-auto scrollbar-none pb-2">
                         {(['overview', 'family', 'visits', 'assistances', 'tasks', 'notes'] as const).map(tab => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-lg py-sm font-label-lg rounded-full transition-all whitespace-nowrap ${
+                                className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-full transition-all whitespace-nowrap shrink-0 ${
                                     activeTab === tab 
-                                    ? 'bg-primary text-on-primary font-bold' 
+                                    ? 'bg-primary text-on-primary font-bold shadow-xs' 
                                     : 'bg-surface-container hover:bg-surface-container-high text-on-surface'
                                 }`}
                             >
@@ -370,42 +378,44 @@ export default function Show({ socialCase, employees }: ShowProps) {
                             </div>
 
                             {/* Members Table */}
-                            <div className="bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
-                                <table className="w-full text-right border-collapse">
-                                    <thead>
-                                        <tr className="bg-surface-container-low text-on-surface font-label-lg border-b border-outline-variant/30">
-                                            <th className="p-sm">الاسم</th>
-                                            <th className="p-sm">صلة القرابة</th>
-                                            <th className="p-sm">العمر</th>
-                                            <th className="p-sm">الحالة الطبية</th>
-                                            <th className="p-sm text-center">العمليات</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-outline-variant/20 text-body-md">
-                                        {socialCase.family_members.length === 0 ? (
-                                            <tr>
-                                                <td colSpan={5} className="p-md text-center text-outline">لم يتم تسجيل أفراد عائلة بعد.</td>
+                            <div className="bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm w-full min-w-0">
+                                <div className="overflow-x-auto w-full">
+                                    <table className="w-full text-right border-collapse min-w-[500px]">
+                                        <thead>
+                                            <tr className="bg-surface-container-low text-on-surface font-label-lg border-b border-outline-variant/30">
+                                                <th className="p-3">الاسم</th>
+                                                <th className="p-3">صلة القرابة</th>
+                                                <th className="p-3">العمر</th>
+                                                <th className="p-3">الحالة الطبية</th>
+                                                <th className="p-3 text-center">العمليات</th>
                                             </tr>
-                                        ) : (
-                                            socialCase.family_members.map(member => (
-                                                <tr key={member.id}>
-                                                    <td className="p-sm font-medium">{member.name}</td>
-                                                    <td className="p-sm">{member.relationship}</td>
-                                                    <td className="p-sm font-mono">{member.age} سنة</td>
-                                                    <td className="p-sm">{member.medical_condition || 'سليم'}</td>
-                                                    <td className="p-sm text-center">
-                                                        <button 
-                                                            onClick={() => handleRemoveFamily(member.id)}
-                                                            className="text-error hover:bg-red-50 p-xs rounded-full"
-                                                        >
-                                                            <span className="material-symbols-outlined text-[18px]">delete</span>
-                                                        </button>
-                                                    </td>
+                                        </thead>
+                                        <tbody className="divide-y divide-outline-variant/20 text-sm">
+                                            {socialCase.family_members.length === 0 ? (
+                                                <tr>
+                                                    <td colSpan={5} className="p-6 text-center text-outline">لم يتم تسجيل أفراد عائلة بعد.</td>
                                                 </tr>
-                                            ))
-                                        )}
-                                    </tbody>
-                                </table>
+                                            ) : (
+                                                socialCase.family_members.map(member => (
+                                                    <tr key={member.id}>
+                                                        <td className="p-3 font-medium">{member.name}</td>
+                                                        <td className="p-3">{member.relationship}</td>
+                                                        <td className="p-3 font-mono">{member.age} سنة</td>
+                                                        <td className="p-3">{member.medical_condition || 'سليم'}</td>
+                                                        <td className="p-3 text-center">
+                                                            <button 
+                                                                onClick={() => handleRemoveFamily(member.id)}
+                                                                className="text-error hover:bg-red-50 p-1.5 rounded-full"
+                                                            >
+                                                                <span className="material-symbols-outlined text-[18px]">delete</span>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -495,35 +505,37 @@ export default function Show({ socialCase, employees }: ShowProps) {
                                 </Link>
                             </div>
 
-                            <div className="bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
-                                <table className="w-full text-right border-collapse">
-                                    <thead>
-                                        <tr className="bg-surface-container-low text-on-surface font-label-lg border-b border-outline-variant/30">
-                                            <th className="p-sm">التاريخ</th>
-                                            <th className="p-sm">النوع</th>
-                                            <th className="p-sm">الوصف</th>
-                                            <th className="p-sm">القيمة المالية</th>
-                                            <th className="p-sm">الباحث المسجل</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-outline-variant/20 text-body-md">
-                                        {socialCase.assistances.length === 0 ? (
-                                            <tr>
-                                                <td colSpan={5} className="p-md text-center text-outline">لم يتم صرف أي مساعدات لهذه الحالة بعد.</td>
+                            <div className="bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm w-full min-w-0">
+                                <div className="overflow-x-auto w-full">
+                                    <table className="w-full text-right border-collapse min-w-[550px]">
+                                        <thead>
+                                            <tr className="bg-surface-container-low text-on-surface font-label-lg border-b border-outline-variant/30">
+                                                <th className="p-3">التاريخ</th>
+                                                <th className="p-3">النوع</th>
+                                                <th className="p-3">الوصف</th>
+                                                <th className="p-3">القيمة المالية</th>
+                                                <th className="p-3">الباحث المسجل</th>
                                             </tr>
-                                        ) : (
-                                            socialCase.assistances.map(assist => (
-                                                <tr key={assist.id}>
-                                                    <td className="p-sm font-mono">{assist.date}</td>
-                                                    <td className="p-sm">{assist.type === 'financial' ? 'مالية' : 'عينية'}</td>
-                                                    <td className="p-sm">{assist.description}</td>
-                                                    <td className="p-sm font-bold text-primary">{Number(assist.amount || 0).toLocaleString('ar-SA')} جنيه مصري</td>
-                                                    <td className="p-sm">{assist.employee?.name}</td>
+                                        </thead>
+                                        <tbody className="divide-y divide-outline-variant/20 text-sm">
+                                            {socialCase.assistances.length === 0 ? (
+                                                <tr>
+                                                    <td colSpan={5} className="p-6 text-center text-outline">لم يتم صرف أي مساعدات لهذه الحالة بعد.</td>
                                                 </tr>
-                                            ))
-                                        )}
-                                    </tbody>
-                                </table>
+                                            ) : (
+                                                socialCase.assistances.map(assist => (
+                                                    <tr key={assist.id}>
+                                                        <td className="p-3 font-mono">{assist.date}</td>
+                                                        <td className="p-3">{assist.type === 'financial' ? 'مالية' : 'عينية'}</td>
+                                                        <td className="p-3">{assist.description}</td>
+                                                        <td className="p-3 font-bold text-primary">{Number(assist.amount || 0).toLocaleString('ar-SA')} جنيه مصري</td>
+                                                        <td className="p-3">{assist.employee?.name}</td>
+                                                    </tr>
+                                                ))
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     )}

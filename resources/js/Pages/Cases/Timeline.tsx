@@ -45,7 +45,7 @@ export default function Timeline({ socialCase, activities }: TimelineProps) {
         <Layout title={`السجل الزمني - ${socialCase.name}`}>
             <Head title={`سجل ${socialCase.name}`} />
 
-            <div className="mb-8 border-b border-outline-variant/20 pb-4">
+            <div className="mb-6 border-b border-outline-variant/20 pb-4">
                 <div className="flex items-center gap-1 text-on-surface-variant text-xs mb-2">
                     <Link href={route('cases.index')} className="hover:text-primary transition-colors">الحالات الاجتماعية</Link>
                     <span className="material-symbols-outlined text-[14px]">chevron_left</span>
@@ -53,50 +53,50 @@ export default function Timeline({ socialCase, activities }: TimelineProps) {
                     <span className="material-symbols-outlined text-[14px]">chevron_left</span>
                     <span className="text-outline">السجل الزمني للأحداث</span>
                 </div>
-                <h1 className="font-bold text-3xl text-on-surface">سجل نشاط ملف المستفيد</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">سجل نشاط ملف المستفيد</h1>
             </div>
 
-            <div className="max-w-3xl relative">
+            <div className="max-w-3xl relative w-full min-w-0">
                 {/* Vertical Timeline Thread */}
                 {activities.length > 0 && (
-                    <div className="absolute right-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-primary/40 via-outline-variant/30 to-transparent pointer-events-none" />
+                    <div className="absolute right-4 sm:right-6 top-5 bottom-5 w-0.5 bg-gradient-to-b from-primary/40 via-outline-variant/30 to-transparent pointer-events-none" />
                 )}
 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                     {activities.length === 0 ? (
-                        <div className="bg-white rounded-xl border border-outline-variant/30 p-8 shadow-sm text-center">
+                        <div className="bg-white rounded-2xl border border-outline-variant/30 p-6 sm:p-8 shadow-xs text-center">
                             <p className="text-outline text-sm">لا توجد سجلات تاريخية مسجلة بعد لهذه الحالة.</p>
                         </div>
                     ) : (
                         activities.map((act, index) => (
                             <div 
                                 key={act.id} 
-                                className="relative flex gap-4 animate-slide-up group"
+                                className="relative flex gap-3 sm:gap-4 animate-slide-up group"
                                 style={{ animationDelay: `${index * 50}ms` }}
                             >
                                 {/* Bullet Node */}
-                                <div className="z-10 flex-shrink-0">
-                                    <span className={`w-12 h-12 rounded-full flex items-center justify-center border shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow ${getActivityColorClass(act.type)}`}>
-                                        <span className="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover:rotate-12">{getActivityIcon(act.type)}</span>
+                                <div className="z-10 shrink-0">
+                                    <span className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border shadow-xs transition-all duration-300 group-hover:scale-105 ${getActivityColorClass(act.type)}`}>
+                                        <span className="material-symbols-outlined text-[16px] sm:text-[20px]">{getActivityIcon(act.type)}</span>
                                     </span>
                                 </div>
                                 
                                 {/* Content Card */}
-                                <div className="flex-1 bg-white rounded-xl border border-outline-variant/20 p-5 shadow-sm hover:shadow-md hover:border-primary/20 hover:-translate-x-1.5 transition-all duration-300 ease-out text-sm">
-                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2 pb-2 border-b border-slate-50">
-                                        <h3 className="font-bold text-on-surface text-base group-hover:text-primary transition-colors">{act.title}</h3>
-                                        <span className="text-xs text-outline bg-slate-50 px-2.5 py-1 rounded-full font-mono font-medium self-start sm:self-center">
+                                <div className="flex-1 bg-white rounded-2xl border border-outline-variant/20 p-3.5 sm:p-5 shadow-xs hover:shadow-sm transition-all duration-200 text-sm min-w-0">
+                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2 mb-2 pb-2 border-b border-slate-50">
+                                        <h3 className="font-bold text-on-surface text-sm sm:text-base group-hover:text-primary transition-colors">{act.title}</h3>
+                                        <span className="text-[11px] sm:text-xs text-outline bg-slate-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full font-mono font-medium self-start sm:self-center">
                                             {new Date(act.created_at).toLocaleString('ar-SA')}
                                         </span>
                                     </div>
                                     
-                                    <p className="text-on-surface-variant leading-relaxed text-sm whitespace-pre-line mb-3">
+                                    <p className="text-on-surface-variant leading-relaxed text-xs sm:text-sm whitespace-pre-line mb-3">
                                         {act.description}
                                     </p>
                                     
-                                    <div className="flex items-center gap-1.5 text-xs text-outline">
+                                    <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-outline">
                                         <span className="material-symbols-outlined text-[14px]">person</span>
-                                        <span>المسؤول عن الإجراء:</span>
+                                        <span>المسؤول:</span>
                                         <span className="font-bold text-on-surface-variant bg-slate-100/60 px-2 py-0.5 rounded">{act.user?.name || 'نظام بر'}</span>
                                     </div>
                                 </div>

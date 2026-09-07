@@ -96,28 +96,28 @@ export default function Index({ cases, filters, employees }: IndexProps) {
         <Layout title="إدارة الحالات الاجتماعية">
             <Head title="الحالات الاجتماعية" />
 
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
                 <div>
-                    <h2 className="font-headline-lg text-headline-lg text-on-surface font-bold">إدارة الحالات الاجتماعية</h2>
-                    <p className="font-body-md text-body-md text-on-surface-variant mt-1">عرض وتصفية وتعديل جميع ملفات المستفيدين المسجلة.</p>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">إدارة الحالات الاجتماعية</h1>
+                    <p className="text-sm sm:text-base text-on-surface-variant mt-1">عرض وتصفية وتعديل جميع ملفات المستفيدين المسجلة.</p>
                 </div>
                 <Link 
                     href={route('cases.create')} 
-                    className="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-6 py-3 rounded-lg flex items-center gap-2 transition-colors shadow-sm"
+                    className="w-full sm:w-auto bg-primary hover:bg-primary-container text-on-primary font-medium text-sm sm:text-base px-5 py-2.5 rounded-xl flex items-center justify-center gap-2 transition-all shadow-xs shrink-0"
                 >
-                    <span className="material-symbols-outlined">add</span>
-                    إضافة حالة جديدة
+                    <span className="material-symbols-outlined text-xl">add</span>
+                    <span>إضافة حالة جديدة</span>
                 </Link>
             </div>
 
             {/* Filters Section */}
-            <div className="bg-white rounded-xl p-lg border border-outline-variant/30 shadow-sm mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+            <div className="bg-white rounded-2xl p-4 sm:p-6 border border-outline-variant/30 shadow-xs mb-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <div>
-                    <label className="block font-label-sm text-on-surface-variant mb-2">بحث عن حالة</label>
+                    <label className="block text-xs sm:text-sm font-medium text-on-surface-variant mb-1.5">بحث عن حالة</label>
                     <div className="relative">
-                        <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+                        <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
                         <input 
-                            className="w-full pr-10 pl-4 py-sm bg-background border border-outline-variant/60 rounded-lg text-body-md outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            className="w-full pr-9 pl-3 py-2 bg-surface-container-low/50 border border-outline-variant/60 rounded-xl text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                             placeholder="الاسم، الهوية، الهاتف..."
                             type="text"
                             value={search}
@@ -127,9 +127,9 @@ export default function Index({ cases, filters, employees }: IndexProps) {
                 </div>
 
                 <div>
-                    <label className="block font-label-sm text-on-surface-variant mb-2">حالة الملف</label>
+                    <label className="block text-xs sm:text-sm font-medium text-on-surface-variant mb-1.5">حالة الملف</label>
                     <select 
-                        className="w-full px-sm py-sm bg-background border border-outline-variant/60 rounded-lg text-body-md outline-none"
+                        className="w-full px-3 py-2 bg-surface-container-low/50 border border-outline-variant/60 rounded-xl text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                         value={status}
                         onChange={e => setStatus(e.target.value)}
                     >
@@ -143,9 +143,9 @@ export default function Index({ cases, filters, employees }: IndexProps) {
                 </div>
 
                 <div>
-                    <label className="block font-label-sm text-on-surface-variant mb-2">المحافظة</label>
+                    <label className="block text-xs sm:text-sm font-medium text-on-surface-variant mb-1.5">المحافظة</label>
                     <select 
-                        className="w-full px-sm py-sm bg-background border border-outline-variant/60 rounded-lg text-body-md outline-none"
+                        className="w-full px-3 py-2 bg-surface-container-low/50 border border-outline-variant/60 rounded-xl text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                         value={governorate}
                         onChange={e => setGovernorate(e.target.value)}
                     >
@@ -157,9 +157,9 @@ export default function Index({ cases, filters, employees }: IndexProps) {
                 </div>
 
                 <div>
-                    <label className="block font-label-sm text-on-surface-variant mb-2">مستوى الأولوية</label>
+                    <label className="block text-xs sm:text-sm font-medium text-on-surface-variant mb-1.5">مستوى الأولوية</label>
                     <select 
-                        className="w-full px-sm py-sm bg-background border border-outline-variant/60 rounded-lg text-body-md outline-none"
+                        className="w-full px-3 py-2 bg-surface-container-low/50 border border-outline-variant/60 rounded-xl text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                         value={priority}
                         onChange={e => setPriority(e.target.value)}
                     >
@@ -173,70 +173,70 @@ export default function Index({ cases, filters, employees }: IndexProps) {
             </div>
 
             {/* Cases Table */}
-            <div className="bg-white rounded-xl border border-outline-variant/30 overflow-hidden shadow-sm">
-                <div className="overflow-x-auto">
-                    <table className="w-full text-right border-collapse">
+            <div className="bg-white rounded-2xl border border-outline-variant/30 overflow-hidden shadow-xs w-full min-w-0">
+                <div className="overflow-x-auto w-full">
+                    <table className="w-full text-right border-collapse min-w-[680px]">
                         <thead>
-                            <tr className="bg-surface-container-low text-on-surface font-label-lg border-b border-outline-variant/30">
-                                <th onClick={() => handleSort('name')} className="p-md cursor-pointer hover:bg-surface-container select-none">اسم الحالة</th>
-                                <th onClick={() => handleSort('national_id')} className="p-md cursor-pointer hover:bg-surface-container select-none">الهوية الوطنية</th>
-                                <th className="p-md">المنطقة / المحافظة</th>
-                                <th className="p-md">الباحث المسؤول</th>
-                                <th className="p-md">الأولوية</th>
-                                <th className="p-md">الحالة</th>
-                                <th className="p-md text-center">العمليات</th>
+                            <tr className="bg-surface-container-low text-on-surface text-xs sm:text-sm font-bold border-b border-outline-variant/30">
+                                <th onClick={() => handleSort('name')} className="p-3 sm:p-4 cursor-pointer hover:bg-surface-container select-none">اسم الحالة</th>
+                                <th onClick={() => handleSort('national_id')} className="p-3 sm:p-4 cursor-pointer hover:bg-surface-container select-none">الهوية الوطنية</th>
+                                <th className="p-3 sm:p-4">المنطقة / المحافظة</th>
+                                <th className="p-3 sm:p-4">الباحث المسؤول</th>
+                                <th className="p-3 sm:p-4">الأولوية</th>
+                                <th className="p-3 sm:p-4">الحالة</th>
+                                <th className="p-3 sm:p-4 text-center">العمليات</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-outline-variant/20 text-body-md">
+                        <tbody className="divide-y divide-outline-variant/20 text-xs sm:text-sm">
                             {cases.data.length === 0 ? (
                                 <tr>
-                                    <td colSpan={7} className="p-lg text-center text-outline">لا توجد حالات تطابق خيارات التصفية الحالية.</td>
+                                    <td colSpan={7} className="p-6 text-center text-outline">لا توجد حالات تطابق خيارات التصفية الحالية.</td>
                                 </tr>
                             ) : (
                                 cases.data.map(item => (
                                     <tr key={item.id} className="hover:bg-surface-container-lowest transition-colors group">
-                                        <td className="p-md font-medium text-on-surface">
+                                        <td className="p-3 sm:p-4 font-bold text-on-surface">
                                             <Link href={route('cases.show', item.id)} className="hover:text-primary transition-colors">
                                                 {item.name}
                                             </Link>
                                         </td>
-                                        <td className="p-md text-on-surface-variant font-mono">{item.national_id}</td>
-                                        <td className="p-md text-on-surface-variant">{item.governorate} - {item.district}</td>
-                                        <td className="p-md text-on-surface-variant">
+                                        <td className="p-3 sm:p-4 text-on-surface-variant font-mono">{item.national_id}</td>
+                                        <td className="p-3 sm:p-4 text-on-surface-variant">{item.governorate} - {item.district}</td>
+                                        <td className="p-3 sm:p-4 text-on-surface-variant">
                                             {item.assigned_employee ? (
-                                                <span className="flex items-center gap-xs">
-                                                    <span className="material-symbols-outlined text-[18px]">person</span>
-                                                    {item.assigned_employee.name}
+                                                <span className="flex items-center gap-1.5">
+                                                    <span className="material-symbols-outlined text-[16px]">person</span>
+                                                    <span>{item.assigned_employee.name}</span>
                                                 </span>
                                             ) : (
                                                 <span className="text-outline text-xs">غير معين</span>
                                             )}
                                         </td>
-                                        <td className="p-md">
-                                            <span className={`px-sm py-xs rounded-full font-bold text-xs ${getPriorityBadgeClass(item.priority)}`}>
+                                        <td className="p-3 sm:p-4">
+                                            <span className={`px-2.5 py-1 rounded-full font-bold text-xs ${getPriorityBadgeClass(item.priority)}`}>
                                                 {item.priority}
                                             </span>
                                         </td>
-                                        <td className="p-md">
-                                            <span className={`px-sm py-xs rounded-full font-bold text-xs ${getStatusBadgeClass(item.status)}`}>
+                                        <td className="p-3 sm:p-4">
+                                            <span className={`px-2.5 py-1 rounded-full font-bold text-xs ${getStatusBadgeClass(item.status)}`}>
                                                 {item.status}
                                             </span>
                                         </td>
-                                        <td className="p-md">
-                                            <div className="flex items-center justify-center gap-sm">
+                                        <td className="p-3 sm:p-4">
+                                            <div className="flex items-center justify-center gap-1">
                                                 <Link 
                                                     href={route('cases.show', item.id)} 
-                                                    className="p-sm text-primary hover:bg-surface-container rounded-full transition-colors"
+                                                    className="p-1.5 text-primary hover:bg-surface-container rounded-lg transition-colors"
                                                     title="عرض الملف"
                                                 >
-                                                    <span className="material-symbols-outlined">visibility</span>
+                                                    <span className="material-symbols-outlined text-lg">visibility</span>
                                                 </Link>
                                                 <Link 
                                                     href={route('cases.edit', item.id)} 
-                                                    className="p-sm text-secondary hover:bg-surface-container rounded-full transition-colors"
+                                                    className="p-1.5 text-secondary hover:bg-surface-container rounded-lg transition-colors"
                                                     title="تعديل"
                                                 >
-                                                    <span className="material-symbols-outlined">edit</span>
+                                                    <span className="material-symbols-outlined text-lg">edit</span>
                                                 </Link>
                                             </div>
                                         </td>
@@ -249,14 +249,14 @@ export default function Index({ cases, filters, employees }: IndexProps) {
 
                 {/* Pagination Links */}
                 {cases.last_page > 1 && (
-                    <div className="p-md bg-surface-container-low border-t border-outline-variant/20 flex justify-center gap-sm">
+                    <div className="p-3 sm:p-4 bg-surface-container-low/50 border-t border-outline-variant/20 flex flex-wrap justify-center gap-1.5 sm:gap-2">
                         {cases.links.map((link, idx) => (
                             <Link
                                 key={idx}
                                 href={link.url || '#'}
-                                className={`px-md py-sm rounded-lg text-sm transition-all ${
+                                className={`px-3 py-1.5 rounded-lg text-xs sm:text-sm transition-all ${
                                     link.active 
-                                    ? 'bg-primary text-on-primary font-bold' 
+                                    ? 'bg-primary text-on-primary font-bold shadow-xs' 
                                     : 'bg-white hover:bg-surface-container border border-outline-variant/30 text-on-surface'
                                 } ${!link.url ? 'opacity-40 cursor-default' : ''}`}
                                 dangerouslySetInnerHTML={{ __html: link.label }}

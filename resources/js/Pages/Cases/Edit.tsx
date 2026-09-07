@@ -54,19 +54,19 @@ export default function Edit({ socialCase, employees }: EditProps) {
         <Layout title={`تعديل حالة - ${socialCase.name}`}>
             <Head title={`تعديل ${socialCase.name}`} />
 
-            <div className="mb-8 border-b border-outline-variant/20 pb-sm">
-                <div className="flex items-center gap-xs text-on-surface-variant text-sm mb-xs">
+            <div className="mb-6 border-b border-outline-variant/20 pb-4">
+                <div className="flex items-center gap-1 text-on-surface-variant text-xs sm:text-sm mb-1">
                     <Link href={route('cases.index')} className="hover:text-primary">الحالات الاجتماعية</Link>
-                    <span className="material-symbols-outlined text-[16px]">chevron_left</span>
+                    <span className="material-symbols-outlined text-[14px]">chevron_left</span>
                     <Link href={route('cases.show', socialCase.id)} className="hover:text-primary">{socialCase.name}</Link>
-                    <span className="material-symbols-outlined text-[16px]">chevron_left</span>
-                    <span>تعديل البيانات</span>
+                    <span className="material-symbols-outlined text-[14px]">chevron_left</span>
+                    <span>تعديل الملف</span>
                 </div>
-                <h1 className="font-display-md text-display-md text-on-surface">تعديل ملف الحالة</h1>
+                <h1 className="text-2xl sm:text-3xl font-bold text-on-surface">تعديل ملف الحالة: {socialCase.name}</h1>
             </div>
 
-            <div className="bg-white rounded-xl border border-outline-variant/30 p-lg shadow-sm max-w-4xl">
-                <form onSubmit={handleSubmit} className="space-y-lg text-body-md">
+            <div className="bg-white rounded-2xl border border-outline-variant/30 p-4 sm:p-6 md:p-8 shadow-xs max-w-4xl w-full min-w-0">
+                <form onSubmit={handleSubmit} className="space-y-6 text-sm sm:text-base">
                     
                     <div>
                         <h3 className="font-bold text-on-surface border-b border-outline-variant/10 pb-xs mb-sm">البيانات الأساسية</h3>
@@ -259,12 +259,12 @@ export default function Edit({ socialCase, employees }: EditProps) {
                         </div>
                     </div>
 
-                    <div className="pt-md border-t border-outline-variant/20 flex gap-sm justify-end">
-                        <Link href={route('cases.show', socialCase.id)} className="bg-white border border-outline-variant/30 text-on-surface px-lg py-sm rounded-lg hover:bg-surface-container transition-all">إلغاء</Link>
+                    <div className="pt-4 border-t border-outline-variant/20 flex flex-col-reverse sm:flex-row gap-2 sm:gap-3 justify-end">
+                        <Link href={route('cases.show', socialCase.id)} className="w-full sm:w-auto text-center bg-white border border-outline-variant/30 text-on-surface px-6 py-2.5 rounded-xl hover:bg-surface-container transition-all text-sm font-medium">إلغاء</Link>
                         <button 
                             type="submit" 
                             disabled={processing}
-                            className="bg-primary text-on-primary font-bold px-xl py-sm rounded-lg hover:bg-primary-container transition-all"
+                            className="w-full sm:w-auto bg-primary hover:bg-primary-container text-on-primary font-bold px-6 py-2.5 rounded-xl transition-all text-sm shadow-xs"
                         >
                             حفظ التعديلات
                         </button>
